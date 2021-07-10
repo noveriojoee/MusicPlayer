@@ -6,8 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <uicomponents/uicomponents.h>
 
-@interface ViewController : UIViewController
+
+@interface MainViewController : BaseViewController
 
 
 @end
