@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0645687DF070506BB57F64A9 /* Pods_BCGMusicPLayyerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C500EF694D25831F745F6D4A /* Pods_BCGMusicPLayyerTests.framework */; };
+		B0CF39E977DCD354746B197A /* Pods_BCGMusicPLayyer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71717D0FF9DECA1EBB223F68 /* Pods_BCGMusicPLayyer.framework */; };
+		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
+		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
+		DEFF01E1269A185F00A21F86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* ViewController.m */; };
+		DEFF01E4269A185F00A21F86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF01E2269A185F00A21F86 /* Main.storyboard */; };
+		DEFF01E6269A186000A21F86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEFF01E5269A186000A21F86 /* Assets.xcassets */; };
+		DEFF01E9269A186000A21F86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEFF01E7269A186000A21F86 /* LaunchScreen.storyboard */; };
+		DEFF01EC269A186000A21F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01EB269A186000A21F86 /* main.m */; };
+		DEFF01F6269A186000A21F86 /* BCGMusicPLayyerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01F5269A186000A21F86 /* BCGMusicPLayyerTests.m */; };
+		DEFF0201269A186000A21F86 /* BCGMusicPLayyerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF0200269A186000A21F86 /* BCGMusicPLayyerUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEFF01F2269A186000A21F86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFF01CE269A185F00A21F86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEFF01D5269A185F00A21F86;
+			remoteInfo = BCGMusicPLayyer;
+		};
+		DEFF01FD269A186000A21F86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEFF01CE269A185F00A21F86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEFF01D5269A185F00A21F86;
+			remoteInfo = BCGMusicPLayyer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.debug.xcconfig"; sourceTree = "<group>"; };
+		6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.release.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.release.xcconfig"; sourceTree = "<group>"; };
+		71717D0FF9DECA1EBB223F68 /* Pods_BCGMusicPLayyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCGMusicPLayyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06496EE6EC68B1700F15374 /* Pods-BCGMusicPLayyerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyerTests.release.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyerTests/Pods-BCGMusicPLayyerTests.release.xcconfig"; sourceTree = "<group>"; };
+		C500EF694D25831F745F6D4A /* Pods_BCGMusicPLayyerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCGMusicPLayyerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7F4F5DDC8E32FE0A0C25762 /* Pods-BCGMusicPLayyerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyerTests.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyerTests/Pods-BCGMusicPLayyerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DEFF01DC269A185F00A21F86 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		DEFF01DD269A185F00A21F86 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		DEFF01DF269A185F00A21F86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DEFF01E0269A185F00A21F86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DEFF01E3269A185F00A21F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DEFF01E5269A186000A21F86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEFF01E8269A186000A21F86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DEFF01EA269A186000A21F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEFF01EB269A186000A21F86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DEFF01F1269A186000A21F86 /* BCGMusicPLayyerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCGMusicPLayyerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFF01F5269A186000A21F86 /* BCGMusicPLayyerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCGMusicPLayyerTests.m; sourceTree = "<group>"; };
+		DEFF01F7269A186000A21F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEFF01FC269A186000A21F86 /* BCGMusicPLayyerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCGMusicPLayyerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEFF0200269A186000A21F86 /* BCGMusicPLayyerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCGMusicPLayyerUITests.m; sourceTree = "<group>"; };
+		DEFF0202269A186000A21F86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEFF01D3269A185F00A21F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0CF39E977DCD354746B197A /* Pods_BCGMusicPLayyer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01EE269A186000A21F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0645687DF070506BB57F64A9 /* Pods_BCGMusicPLayyerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01F9269A186000A21F86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E7D947C3CD6D24BE3B885BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71717D0FF9DECA1EBB223F68 /* Pods_BCGMusicPLayyer.framework */,
+				C500EF694D25831F745F6D4A /* Pods_BCGMusicPLayyerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC8AA3D398ABB56565301817 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */,
+				6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */,
+				C7F4F5DDC8E32FE0A0C25762 /* Pods-BCGMusicPLayyerTests.debug.xcconfig */,
+				B06496EE6EC68B1700F15374 /* Pods-BCGMusicPLayyerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DED3FFB6269A18F3009DA4D0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DED3FFB7269A18F8009DA4D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DED3FFB8269A18FD009DA4D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEFF01DF269A185F00A21F86 /* ViewController.h */,
+				DEFF01E0269A185F00A21F86 /* ViewController.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DED3FFB9269A1947009DA4D0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DEFF01E2269A185F00A21F86 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DEFF01CD269A185F00A21F86 = {
+			isa = PBXGroup;
+			children = (
+				DEFF01D8269A185F00A21F86 /* BCGMusicPLayyer */,
+				DEFF01F4269A186000A21F86 /* BCGMusicPLayyerTests */,
+				DEFF01FF269A186000A21F86 /* BCGMusicPLayyerUITests */,
+				DEFF01D7269A185F00A21F86 /* Products */,
+				AC8AA3D398ABB56565301817 /* Pods */,
+				6E7D947C3CD6D24BE3B885BD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DEFF01D7269A185F00A21F86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */,
+				DEFF01F1269A186000A21F86 /* BCGMusicPLayyerTests.xctest */,
+				DEFF01FC269A186000A21F86 /* BCGMusicPLayyerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEFF01D8269A185F00A21F86 /* BCGMusicPLayyer */ = {
+			isa = PBXGroup;
+			children = (
+				DED3FFB9269A1947009DA4D0 /* Storyboards */,
+				DED3FFB8269A18FD009DA4D0 /* Views */,
+				DED3FFB7269A18F8009DA4D0 /* Models */,
+				DED3FFB6269A18F3009DA4D0 /* ViewModels */,
+				DEFF01D9269A185F00A21F86 /* AppDelegate.h */,
+				DEFF01DA269A185F00A21F86 /* AppDelegate.m */,
+				DEFF01DC269A185F00A21F86 /* SceneDelegate.h */,
+				DEFF01DD269A185F00A21F86 /* SceneDelegate.m */,
+				DEFF01E5269A186000A21F86 /* Assets.xcassets */,
+				DEFF01E7269A186000A21F86 /* LaunchScreen.storyboard */,
+				DEFF01EA269A186000A21F86 /* Info.plist */,
+				DEFF01EB269A186000A21F86 /* main.m */,
+			);
+			path = BCGMusicPLayyer;
+			sourceTree = "<group>";
+		};
+		DEFF01F4269A186000A21F86 /* BCGMusicPLayyerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DEFF01F5269A186000A21F86 /* BCGMusicPLayyerTests.m */,
+				DEFF01F7269A186000A21F86 /* Info.plist */,
+			);
+			path = BCGMusicPLayyerTests;
+			sourceTree = "<group>";
+		};
+		DEFF01FF269A186000A21F86 /* BCGMusicPLayyerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DEFF0200269A186000A21F86 /* BCGMusicPLayyerUITests.m */,
+				DEFF0202269A186000A21F86 /* Info.plist */,
+			);
+			path = BCGMusicPLayyerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEFF0205269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyer" */;
+			buildPhases = (
+				1B5F24E4433D42D8F50692BC /* [CP] Check Pods Manifest.lock */,
+				DEFF01D2269A185F00A21F86 /* Sources */,
+				DEFF01D3269A185F00A21F86 /* Frameworks */,
+				DEFF01D4269A185F00A21F86 /* Resources */,
+				42E9B38FD2BB17BDF0E8EC27 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BCGMusicPLayyer;
+			productName = BCGMusicPLayyer;
+			productReference = DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DEFF01F0269A186000A21F86 /* BCGMusicPLayyerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEFF0208269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyerTests" */;
+			buildPhases = (
+				AA6DA08C790CAAEF23FA8320 /* [CP] Check Pods Manifest.lock */,
+				DEFF01ED269A186000A21F86 /* Sources */,
+				DEFF01EE269A186000A21F86 /* Frameworks */,
+				DEFF01EF269A186000A21F86 /* Resources */,
+				84B2E01C60508F26E87CA778 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEFF01F3269A186000A21F86 /* PBXTargetDependency */,
+			);
+			name = BCGMusicPLayyerTests;
+			productName = BCGMusicPLayyerTests;
+			productReference = DEFF01F1269A186000A21F86 /* BCGMusicPLayyerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DEFF01FB269A186000A21F86 /* BCGMusicPLayyerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEFF020B269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyerUITests" */;
+			buildPhases = (
+				DEFF01F8269A186000A21F86 /* Sources */,
+				DEFF01F9269A186000A21F86 /* Frameworks */,
+				DEFF01FA269A186000A21F86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEFF01FE269A186000A21F86 /* PBXTargetDependency */,
+			);
+			name = BCGMusicPLayyerUITests;
+			productName = BCGMusicPLayyerUITests;
+			productReference = DEFF01FC269A186000A21F86 /* BCGMusicPLayyerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEFF01CE269A185F00A21F86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DEFF01D5269A185F00A21F86 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DEFF01F0269A186000A21F86 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DEFF01D5269A185F00A21F86;
+					};
+					DEFF01FB269A186000A21F86 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DEFF01D5269A185F00A21F86;
+					};
+				};
+			};
+			buildConfigurationList = DEFF01D1269A185F00A21F86 /* Build configuration list for PBXProject "BCGMusicPLayyer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEFF01CD269A185F00A21F86;
+			productRefGroup = DEFF01D7269A185F00A21F86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */,
+				DEFF01F0269A186000A21F86 /* BCGMusicPLayyerTests */,
+				DEFF01FB269A186000A21F86 /* BCGMusicPLayyerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEFF01D4269A185F00A21F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEFF01E9269A186000A21F86 /* LaunchScreen.storyboard in Resources */,
+				DEFF01E6269A186000A21F86 /* Assets.xcassets in Resources */,
+				DEFF01E4269A185F00A21F86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01EF269A186000A21F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01FA269A186000A21F86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B5F24E4433D42D8F50692BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BCGMusicPLayyer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42E9B38FD2BB17BDF0E8EC27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84B2E01C60508F26E87CA778 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyerTests/Pods-BCGMusicPLayyerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyerTests/Pods-BCGMusicPLayyerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyerTests/Pods-BCGMusicPLayyerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA6DA08C790CAAEF23FA8320 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BCGMusicPLayyerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEFF01D2269A185F00A21F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEFF01E1269A185F00A21F86 /* ViewController.m in Sources */,
+				DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */,
+				DEFF01EC269A186000A21F86 /* main.m in Sources */,
+				DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01ED269A186000A21F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEFF01F6269A186000A21F86 /* BCGMusicPLayyerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEFF01F8269A186000A21F86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEFF0201269A186000A21F86 /* BCGMusicPLayyerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEFF01F3269A186000A21F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */;
+			targetProxy = DEFF01F2269A186000A21F86 /* PBXContainerItemProxy */;
+		};
+		DEFF01FE269A186000A21F86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */;
+			targetProxy = DEFF01FD269A186000A21F86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DEFF01E2269A185F00A21F86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEFF01E3269A185F00A21F86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DEFF01E7269A186000A21F86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEFF01E8269A186000A21F86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DEFF0203269A186000A21F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DEFF0204269A186000A21F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEFF0206269A186000A21F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEFF0207269A186000A21F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DEFF0209269A186000A21F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7F4F5DDC8E32FE0A0C25762 /* Pods-BCGMusicPLayyerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BCGMusicPLayyer.app/BCGMusicPLayyer";
+			};
+			name = Debug;
+		};
+		DEFF020A269A186000A21F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B06496EE6EC68B1700F15374 /* Pods-BCGMusicPLayyerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BCGMusicPLayyer.app/BCGMusicPLayyer";
+			};
+			name = Release;
+		};
+		DEFF020C269A186000A21F86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BCGMusicPLayyer;
+			};
+			name = Debug;
+		};
+		DEFF020D269A186000A21F86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPLayyerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPLayyerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BCGMusicPLayyer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEFF01D1269A185F00A21F86 /* Build configuration list for PBXProject "BCGMusicPLayyer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEFF0203269A186000A21F86 /* Debug */,
+				DEFF0204269A186000A21F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEFF0205269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEFF0206269A186000A21F86 /* Debug */,
+				DEFF0207269A186000A21F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEFF0208269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEFF0209269A186000A21F86 /* Debug */,
+				DEFF020A269A186000A21F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEFF020B269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEFF020C269A186000A21F86 /* Debug */,
+				DEFF020D269A186000A21F86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEFF01CE269A185F00A21F86 /* Project object */;
+}

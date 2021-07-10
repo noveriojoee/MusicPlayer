@@ -1,0 +1,27 @@
+PODS:
+  - lottie-ios (2.5.3)
+  - Shimmer (1.0.2)
+  - uicomponents (1.0.0):
+    - lottie-ios (= 2.5.3)
+    - Shimmer (~> 1.0)
+
+DEPENDENCIES:
+  - uicomponents (from `../UIComponents`)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+    - Shimmer
+
+EXTERNAL SOURCES:
+  uicomponents:
+    :path: "../UIComponents"
+
+SPEC CHECKSUMS:
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  uicomponents: 2f7d23f461a8e936e616450e205eed84068541af
+
+PODFILE CHECKSUM: d3b4fcc12b5ed58cf2c0db7f4515c168d04102ea
+
+COCOAPODS: 1.8.4
