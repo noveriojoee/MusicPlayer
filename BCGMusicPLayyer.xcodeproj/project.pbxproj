@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
 		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
+		DEDC52B4269B043A006BF1CA /* SongCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */; };
+		DEDC52B5269B043A006BF1CA /* SongCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -27,6 +29,9 @@
 		DEDC528D269AFDB3006BF1CA /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
 		DEDC5290269AFDDD006BF1CA /* MusicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
 		DEDC5291269AFDDD006BF1CA /* MusicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		DEDC52B1269B0439006BF1CA /* SongCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCardTableViewCell.h; sourceTree = "<group>"; };
+		DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCardTableViewCell.xib; sourceTree = "<group>"; };
+		DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCardTableViewCell.m; sourceTree = "<group>"; };
 		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -109,6 +114,17 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		DEDC52A4269B0400006BF1CA /* UIViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC52B1269B0439006BF1CA /* SongCardTableViewCell.h */,
+				DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */,
+				DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */,
+			);
+			name = UIViewCells;
+			path = ../../uicomponents/uicomponents/UIViewCells;
+			sourceTree = "<group>";
+		};
 		DEFF01CD269A185F00A21F86 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +148,7 @@
 		DEFF01D8269A185F00A21F86 /* BCGMusicPLayyer */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC52A4269B0400006BF1CA /* UIViewCells */,
 				DED3FFB9269A1947009DA4D0 /* Storyboards */,
 				DED3FFB8269A18FD009DA4D0 /* Views */,
 				DED3FFB7269A18F8009DA4D0 /* Models */,
@@ -225,6 +242,7 @@
 			files = (
 				DEFF01E9269A186000A21F86 /* LaunchScreen.storyboard in Resources */,
 				DEFF01E4269A185F00A21F86 /* Main.storyboard in Resources */,
+				DEDC52B4269B043A006BF1CA /* SongCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC52B5269B043A006BF1CA /* SongCardTableViewCell.m in Sources */,
 				DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */,
 				DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */,
 				DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */,
