@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
+		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -21,6 +23,10 @@
 		6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.release.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.release.xcconfig"; sourceTree = "<group>"; };
 		B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCGMusicPLayyer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB40253269A3AF30018138B /* uicomponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uicomponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEDC528C269AFDB3006BF1CA /* MainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		DEDC528D269AFDB3006BF1CA /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		DEDC5290269AFDDD006BF1CA /* MusicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
+		DEDC5291269AFDDD006BF1CA /* MusicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
 		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +77,8 @@
 		DED3FFB6269A18F3009DA4D0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC528C269AFDB3006BF1CA /* MainViewModel.h */,
+				DEDC528D269AFDB3006BF1CA /* MainViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -78,6 +86,8 @@
 		DED3FFB7269A18F8009DA4D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC5290269AFDDD006BF1CA /* MusicModel.h */,
+				DEDC5291269AFDDD006BF1CA /* MusicModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,8 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */,
+				DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */,
 				DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */,
 				DEFF01EC269A186000A21F86 /* main.m in Sources */,
+				DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */,
 				DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
