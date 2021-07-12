@@ -6,6 +6,7 @@
 //
 
 #import "GetMusicAPI.h"
+#import "MusicModel.h"
 
 @implementation GetMusicAPI
 
@@ -25,16 +26,25 @@
     return self;
 }
 
--(void)searchMusicWithParamString : (NSString*) parameters{
+-(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(APIResult<MusicModel*>*))onPerformWithUrlFinish{
     NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
     NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
     
-    NSMutableURLRequest* httpRequest = [self getb:[requestModel toDictionary] endpointUrl:actionMethod];
+    NSMutableURLRequest* httpRequest = [self getBasicGETAuthRequestWithEndpointUrl:endPointUrl];
     
-    
-    [NetworkingObject.sharedManager performRequestWithHTTPRequest:<#(nonnull NSMutableURLRequest *)#> onCompleted:^(id _Nonnull) {
-        <#code#>
-    }]
+    [NetworkingObject.sharedManager performRequestWithHTTPRequest:httpRequest onCompleted:^(id result) {
+        if ([result isKindOfClass:NSString.class]){
+            [responseObject setApiResponseMessage:(NSString*)result];
+        }else{
+            JSONModelError* error;
+            responseObject.serviceModel = [[ParameterModels alloc] initWithString:[Serializer toJsonStringFromObject:result] error:&error];
+            if(error != nil){
+                [responseObject setApiResponseMessage:@"Unknown Error"];
+            }else{
+                [responseObject setApiResponseMessage:@"OK"];
+            }
+        }
+    }];
     
 }
 @end

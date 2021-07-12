@@ -18,6 +18,8 @@
 		DEE8BD8B269C3D66008073E7 /* BasicAPIRequestServices.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD8A269C3D66008073E7 /* BasicAPIRequestServices.m */; };
 		DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE8BD93269C3F4A008073E7 /* Security.framework */; };
 		DEE8BD98269C3F8D008073E7 /* Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD97269C3F8D008073E7 /* Serializer.m */; };
+		DEE8BDB1269C42F5008073E7 /* DTOGetMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */; };
+		DEE8BDB4269C4341008073E7 /* BaseDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB3269C4341008073E7 /* BaseDTO.m */; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -63,6 +65,10 @@
 		DEE8BD93269C3F4A008073E7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DEE8BD96269C3F8D008073E7 /* Serializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
 		DEE8BD97269C3F8D008073E7 /* Serializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Serializer.m; sourceTree = "<group>"; };
+		DEE8BDAF269C42F5008073E7 /* DTOGetMusic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTOGetMusic.h; sourceTree = "<group>"; };
+		DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTOGetMusic.m; sourceTree = "<group>"; };
+		DEE8BDB2269C4341008073E7 /* BaseDTO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDTO.h; sourceTree = "<group>"; };
+		DEE8BDB3269C4341008073E7 /* BaseDTO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseDTO.m; sourceTree = "<group>"; };
 		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		DEE8BD84269C3BF1008073E7 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				DEE8BDAE269C42D1008073E7 /* DTO */,
 				DEE8BD95269C3F80008073E7 /* Serializer */,
 				DEE8BD88269C3D53008073E7 /* BaseAPI */,
 				DEE8BD85269C3C04008073E7 /* GetMusicAPI.h */,
@@ -196,6 +203,17 @@
 				DEE8BD97269C3F8D008073E7 /* Serializer.m */,
 			);
 			path = Serializer;
+			sourceTree = "<group>";
+		};
+		DEE8BDAE269C42D1008073E7 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8BDAF269C42F5008073E7 /* DTOGetMusic.h */,
+				DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */,
+				DEE8BDB2269C4341008073E7 /* BaseDTO.h */,
+				DEE8BDB3269C4341008073E7 /* BaseDTO.m */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		DEFF01CD269A185F00A21F86 = {
@@ -352,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE8BDB1269C42F5008073E7 /* DTOGetMusic.m in Sources */,
 				DEE8BD8B269C3D66008073E7 /* BasicAPIRequestServices.m in Sources */,
 				DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */,
 				DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */,
@@ -362,6 +381,7 @@
 				DEFF01EC269A186000A21F86 /* main.m in Sources */,
 				DEE8BD98269C3F8D008073E7 /* Serializer.m in Sources */,
 				DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */,
+				DEE8BDB4269C4341008073E7 /* BaseDTO.m in Sources */,
 				DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
