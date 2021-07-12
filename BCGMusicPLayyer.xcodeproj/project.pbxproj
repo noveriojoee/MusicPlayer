@@ -3,14 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
 		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
-		DEDC52B4269B043A006BF1CA /* SongCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */; };
-		DEDC52B5269B043A006BF1CA /* SongCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */; };
+		DEDC530F269B069A006BF1CA /* uicomponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC530E269B069A006BF1CA /* uicomponents.framework */; };
+		DEDC5310269B069A006BF1CA /* uicomponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC530E269B069A006BF1CA /* uicomponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */; };
+		DEE8BD4C269C3934008073E7 /* MusicCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8BD24269C37D2008073E7 /* MusicCardTableViewCell.xib */; };
+		DEE8BD5E269C39E7008073E7 /* NetworkingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD5D269C39E7008073E7 /* NetworkingObject.m */; };
+		DEE8BD87269C3C04008073E7 /* GetMusicAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD86269C3C04008073E7 /* GetMusicAPI.m */; };
+		DEE8BD8B269C3D66008073E7 /* BasicAPIRequestServices.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD8A269C3D66008073E7 /* BasicAPIRequestServices.m */; };
+		DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE8BD93269C3F4A008073E7 /* Security.framework */; };
+		DEE8BD98269C3F8D008073E7 /* Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD97269C3F8D008073E7 /* Serializer.m */; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -19,6 +26,20 @@
 		DEFF01EC269A186000A21F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01EB269A186000A21F86 /* main.m */; };
 		EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEDC5311269B069B006BF1CA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DEDC5310269B069A006BF1CA /* uicomponents.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -29,9 +50,19 @@
 		DEDC528D269AFDB3006BF1CA /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
 		DEDC5290269AFDDD006BF1CA /* MusicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
 		DEDC5291269AFDDD006BF1CA /* MusicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
-		DEDC52B1269B0439006BF1CA /* SongCardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCardTableViewCell.h; sourceTree = "<group>"; };
-		DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongCardTableViewCell.xib; sourceTree = "<group>"; };
-		DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCardTableViewCell.m; sourceTree = "<group>"; };
+		DEDC530E269B069A006BF1CA /* uicomponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uicomponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE8BD24269C37D2008073E7 /* MusicCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCardTableViewCell.xib; sourceTree = "<group>"; };
+		DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicCardTableViewCell.m; sourceTree = "<group>"; };
+		DEE8BD26269C37D2008073E7 /* MusicCardTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicCardTableViewCell.h; sourceTree = "<group>"; };
+		DEE8BD5C269C39E7008073E7 /* NetworkingObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkingObject.h; sourceTree = "<group>"; };
+		DEE8BD5D269C39E7008073E7 /* NetworkingObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkingObject.m; sourceTree = "<group>"; };
+		DEE8BD85269C3C04008073E7 /* GetMusicAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetMusicAPI.h; sourceTree = "<group>"; };
+		DEE8BD86269C3C04008073E7 /* GetMusicAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMusicAPI.m; sourceTree = "<group>"; };
+		DEE8BD89269C3D66008073E7 /* BasicAPIRequestServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicAPIRequestServices.h; sourceTree = "<group>"; };
+		DEE8BD8A269C3D66008073E7 /* BasicAPIRequestServices.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BasicAPIRequestServices.m; sourceTree = "<group>"; };
+		DEE8BD93269C3F4A008073E7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DEE8BD96269C3F8D008073E7 /* Serializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Serializer.h; sourceTree = "<group>"; };
+		DEE8BD97269C3F8D008073E7 /* Serializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Serializer.m; sourceTree = "<group>"; };
 		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDC530F269B069A006BF1CA /* uicomponents.framework in Frameworks */,
+				DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */,
 				EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +97,8 @@
 		6E7D947C3CD6D24BE3B885BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEE8BD93269C3F4A008073E7 /* Security.framework */,
+				DEDC530E269B069A006BF1CA /* uicomponents.framework */,
 				DEB40253269A3AF30018138B /* uicomponents.framework */,
 				B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */,
 			);
@@ -100,6 +135,7 @@
 		DED3FFB8269A18FD009DA4D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DEE8BD23269C37CC008073E7 /* UIViewCells */,
 				DEFF01DF269A185F00A21F86 /* MainViewController.h */,
 				DEFF01E0269A185F00A21F86 /* MainViewController.m */,
 			);
@@ -114,15 +150,52 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		DEDC52A4269B0400006BF1CA /* UIViewCells */ = {
+		DEE8BD23269C37CC008073E7 /* UIViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				DEDC52B1269B0439006BF1CA /* SongCardTableViewCell.h */,
-				DEDC52B3269B0439006BF1CA /* SongCardTableViewCell.m */,
-				DEDC52B2269B0439006BF1CA /* SongCardTableViewCell.xib */,
+				DEE8BD26269C37D2008073E7 /* MusicCardTableViewCell.h */,
+				DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */,
+				DEE8BD24269C37D2008073E7 /* MusicCardTableViewCell.xib */,
 			);
-			name = UIViewCells;
-			path = ../../uicomponents/uicomponents/UIViewCells;
+			path = UIViewCells;
+			sourceTree = "<group>";
+		};
+		DEE8BD59269C39A6008073E7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8BD5C269C39E7008073E7 /* NetworkingObject.h */,
+				DEE8BD5D269C39E7008073E7 /* NetworkingObject.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DEE8BD84269C3BF1008073E7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8BD95269C3F80008073E7 /* Serializer */,
+				DEE8BD88269C3D53008073E7 /* BaseAPI */,
+				DEE8BD85269C3C04008073E7 /* GetMusicAPI.h */,
+				DEE8BD86269C3C04008073E7 /* GetMusicAPI.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DEE8BD88269C3D53008073E7 /* BaseAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8BD89269C3D66008073E7 /* BasicAPIRequestServices.h */,
+				DEE8BD8A269C3D66008073E7 /* BasicAPIRequestServices.m */,
+			);
+			path = BaseAPI;
+			sourceTree = "<group>";
+		};
+		DEE8BD95269C3F80008073E7 /* Serializer */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8BD96269C3F8D008073E7 /* Serializer.h */,
+				DEE8BD97269C3F8D008073E7 /* Serializer.m */,
+			);
+			path = Serializer;
 			sourceTree = "<group>";
 		};
 		DEFF01CD269A185F00A21F86 = {
@@ -148,7 +221,8 @@
 		DEFF01D8269A185F00A21F86 /* BCGMusicPLayyer */ = {
 			isa = PBXGroup;
 			children = (
-				DEDC52A4269B0400006BF1CA /* UIViewCells */,
+				DEE8BD84269C3BF1008073E7 /* API */,
+				DEE8BD59269C39A6008073E7 /* Networking */,
 				DED3FFB9269A1947009DA4D0 /* Storyboards */,
 				DED3FFB8269A18FD009DA4D0 /* Views */,
 				DED3FFB7269A18F8009DA4D0 /* Models */,
@@ -193,7 +267,7 @@
 				DEFF01D2269A185F00A21F86 /* Sources */,
 				DEFF01D3269A185F00A21F86 /* Frameworks */,
 				DEFF01D4269A185F00A21F86 /* Resources */,
-				B9D20A5A023E4FC64FBC5BC0 /* [CP] Copy Pods Resources */,
+				DEDC5311269B069B006BF1CA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,9 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE8BD4C269C3934008073E7 /* MusicCardTableViewCell.xib in Resources */,
 				DEFF01E9269A186000A21F86 /* LaunchScreen.storyboard in Resources */,
 				DEFF01E4269A185F00A21F86 /* Main.storyboard in Resources */,
-				DEDC52B4269B043A006BF1CA /* SongCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,23 +345,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B9D20A5A023E4FC64FBC5BC0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -295,11 +352,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDC52B5269B043A006BF1CA /* SongCardTableViewCell.m in Sources */,
+				DEE8BD8B269C3D66008073E7 /* BasicAPIRequestServices.m in Sources */,
+				DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */,
 				DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */,
 				DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */,
+				DEE8BD87269C3C04008073E7 /* GetMusicAPI.m in Sources */,
 				DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */,
+				DEE8BD5E269C39E7008073E7 /* NetworkingObject.m in Sources */,
 				DEFF01EC269A186000A21F86 /* main.m in Sources */,
+				DEE8BD98269C3F8D008073E7 /* Serializer.m in Sources */,
 				DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */,
 				DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */,
 			);

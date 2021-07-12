@@ -1,27 +1,34 @@
 PODS:
-  - lottie-ios (2.5.3)
-  - Shimmer (1.0.2)
-  - uicomponents (1.0.0):
-    - lottie-ios (= 2.5.3)
-    - Shimmer (~> 1.0)
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - JSONModel (1.8.0)
 
 DEPENDENCIES:
-  - uicomponents (from `../UIComponents`)
+  - AFNetworking (~> 3.0)
+  - JSONModel
 
 SPEC REPOS:
   trunk:
-    - lottie-ios
-    - Shimmer
-
-EXTERNAL SOURCES:
-  uicomponents:
-    :path: "../UIComponents"
+    - AFNetworking
+    - JSONModel
 
 SPEC CHECKSUMS:
-  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
-  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
-  uicomponents: 2f7d23f461a8e936e616450e205eed84068541af
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
 
-PODFILE CHECKSUM: 6c399422187d45205998f4b5bf15fbf08c9f54e0
+PODFILE CHECKSUM: 62b94c84a63f01612ea130863a91694dae9b0777
 
 COCOAPODS: 1.8.4

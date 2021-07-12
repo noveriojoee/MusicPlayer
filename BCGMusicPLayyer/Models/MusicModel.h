@@ -6,14 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel/JSONModelLib.h>
+#import <JSONModel/JSONModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MusicModel : NSObject
+@interface MusicModel : JSONModel
 
-@property NSString* title;
-@property NSString* artist;
-@property NSString* description;
+@property (nonatomic) NSString <Optional> *title;
+@property (nonatomic) NSString <Optional> *artist;
+@property (nonatomic) NSString <Optional> *songDescription;
 
 @end
 

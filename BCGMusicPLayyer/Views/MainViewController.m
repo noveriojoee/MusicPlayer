@@ -6,8 +6,12 @@
 //
 
 #import "MainViewController.h"
+#import "MusicCardTableViewCell.h"
 
 @interface MainViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *tfSearchField;
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
 
 @end
 
@@ -15,37 +19,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
-    
+    [super viewDidAppear:animated];
 }
-
 
 #pragma tableview delegates
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-        CardListTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"card_item_template" forIndexPath:indexPath];
-        return cell;
-    }else{
-        return nil;
-    }
+    MusicCardTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"song_item_template" forIndexPath:indexPath];
+    
+    return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.viewModel.selectedCard = (CardModel*)[self.viewModel.listCard objectAtIndex:indexPath.row];
+    NSLog(@"testing");
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10
+    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 125;
 }
-
 #pragma end
+
 
 
 @end

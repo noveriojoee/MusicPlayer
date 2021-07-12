@@ -2,7 +2,9 @@
 platform :ios, '10.0'
 
 def dev_frameworks
-  pod 'uicomponents', :path => '../UIComponents'
+#  pod 'uicomponents', :path => '../UIComponents'
+  pod 'JSONModel'
+  pod 'AFNetworking', '~> 3.0'
 end
 
 

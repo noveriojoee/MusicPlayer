@@ -56,6 +56,10 @@
                             <constraint firstItem="MdH-Jp-Uwp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t4U-Af-hUv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tblView" destination="5RK-LO-I3o" id="fvh-uy-cI6"/>
+                        <outlet property="tfSearchField" destination="gvF-9X-B9L" id="E0S-qI-FbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
