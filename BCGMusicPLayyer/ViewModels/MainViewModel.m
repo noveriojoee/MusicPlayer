@@ -14,11 +14,12 @@
     if (self == [super init]){
         self.modelsCount = 0;
         self.searchField = @"";
+        self.isPlaying = NO;
     }
     return self;
 }
 
--(void)setSelectedMusicWithIndex : (int)itemIndex{
+-(void)setSelectedMusicWithIndex : (long)itemIndex{
     self.selectedMusic = [self.models objectAtIndex:itemIndex];
 }
 
@@ -36,24 +37,6 @@
         }
     }];
 }
-
-
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-//
-//    if (object == songPlayer && [keyPath isEqualToString:@"status"]) {
-//        if (songPlayer.status == AVPlayerStatusFailed) {
-//            NSLog(@"AVPlayer Failed");
-//
-//        } else if (songPlayer.status == AVPlayerStatusReadyToPlay) {
-//            NSLog(@"AVPlayerStatusReadyToPlay");
-//
-//
-//        } else if (songPlayer.status == AVPlayerItemStatusUnknown) {
-//            NSLog(@"AVPlayer Unknown");
-//
-//        }
-//    }
-//}
 
 
 @end

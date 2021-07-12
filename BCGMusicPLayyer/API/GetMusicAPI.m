@@ -12,7 +12,8 @@
 
 -(id)init{
     if ( self = [super init] ) {
-        self.baseUrl = @"https://run.mocky.io/v3";
+//        self.baseUrl = @"https://run.mocky.io/v3";
+        self.baseUrl = @"https://itunes.apple.com/search?term=[paramSearch]";
     }
     return self;
 }
@@ -27,9 +28,9 @@
 }
 
 -(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic*))onPerformWithUrlFinish{
-    NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
-    NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
-    
+//    NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
+//    NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
+    NSString* endPointUrl = [self.baseUrl stringByReplacingOccurrencesOfString:@"[paramSearch]" withString:@"music"];
     NSMutableURLRequest* httpRequest = [self getBasicGETAuthRequestWithEndpointUrl:endPointUrl];
     
     [NetworkingObject.sharedManager performRequestWithHTTPRequest:httpRequest onCompleted:^(id result) {

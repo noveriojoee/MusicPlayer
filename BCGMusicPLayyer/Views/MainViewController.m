@@ -9,14 +9,22 @@
 #import "MusicCardTableViewCell.h"
 #import "Serializer.h"
 
-@interface MainViewController () <UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate>
+@interface MainViewController () <UITableViewDataSource, UITableViewDelegate,AVAudioPlayerDelegate, MusicCardDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *tfSearchField;
+@property (weak, nonatomic) IBOutlet CustomTextField *tfSearchField;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property MusicCardTableViewCell* selectedCell;
 
 @end
 
 @implementation MainViewController
+
+-(void)setTfSearchField:(CustomTextField *)tfSearchField{
+    [tfSearchField bind:^(NSString *value) {
+        self.viewModel.searchField = value;
+    }];
+    _tfSearchField = tfSearchField;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,34 +49,12 @@
     if (indexPath.row < self.viewModel.modelsCount){
         MusicModel* musicItem = (MusicModel*)[self.viewModel.models objectAtIndex:indexPath.row];
         
-        [cell setContentWithModel:musicItem withMusicCardDelegate:self];
+        [cell setContentWithModel:musicItem cellIndex:indexPath.row withMusicCardDelegate:self];
         return cell;
     }else{
         return nil;
     }
     
-    
-}
-
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self.viewModel setSelectedMusicWithIndex:indexPath.row];
-    
-    NSURL *url = [NSURL URLWithString:self.viewModel.selectedMusic.previewUrl];
-    NSData *soundData = [NSData dataWithContentsOfURL:url];
-    self.viewModel.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
-    self.viewModel.songPlayer.delegate = self;
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-    [self.viewModel.songPlayer play];
-    
-    //    self.viewModel.songPlayer = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:self.viewModel.selectedMusic.previewUrl]];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self
-    //                                             selector:@selector(playerItemDidReachEnd:)
-    //                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-    //                                               object:[self.viewModel.songPlayer currentItem]];
-    //    [self.viewModel.songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
-
-    //
-    //    [self.viewModel.songPlayer play];
     
 }
 
@@ -81,10 +67,34 @@
 }
 #pragma end
 
+#pragma MusicCardDelegate
+-(void)playSelectedMusicFromCells : (MusicCardTableViewCell*)cell{
+    if ([self playSongWithIndex:cell.cellindex clickWithButtonPlay:NO]){
+        if (self.selectedCell != nil){
+            [self.selectedCell setTrackIsStop];
+        }
+        [cell setTrackIsPlay];
+        self.selectedCell = cell;
+    }
+}
+#pragma end
+
+#pragma avPlayerDelegate
+-(BOOL)playSongWithIndex : (long)index clickWithButtonPlay : (BOOL)isClickButtonPlay{
+    if (self.viewModel.isPlaying == NO){
+        [self.viewModel setSelectedMusicWithIndex:index];
+        NSURL *url = [NSURL URLWithString:self.viewModel.selectedMusic.previewUrl];
+        NSData *soundData = [NSData dataWithContentsOfURL:url];
+        self.viewModel.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
+        self.viewModel.songPlayer.delegate = self;
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+        [self.viewModel.songPlayer play];
+        return YES;
+    }
+    return NO;
+}
 -(void)updateProgress:(NSString*)temp{
-    NSLog([@"currentTime" stringByAppendingString:[Serializer formattedDuration:self.viewModel.songPlayer.currentTime]]);
-    NSLog([@"duration" stringByAppendingString:[Serializer formattedDuration:self.viewModel.songPlayer.duration]]);
-    NSLog(@"xxx");
+    NSLog(@"%f",self.viewModel.songPlayer.duration);
 }
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     [self.viewModel.songPlayer stop];
@@ -94,6 +104,7 @@
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error{
     NSLog(@"Error occured");
 }
+#pragma end
 
 
 @end

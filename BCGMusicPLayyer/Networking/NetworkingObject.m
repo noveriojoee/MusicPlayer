@@ -17,7 +17,7 @@
 @implementation NetworkingObject
 -(id)init {
     if ( self = [super init] ) {
-        self.listBypassedUrl = @[@"https://run.mocky.io/v3/"];
+        self.listBypassedUrl = @[@"https://run.mocky.io/v3/",@"https://itunes.apple.com/search"];
     }
     return self;
 }

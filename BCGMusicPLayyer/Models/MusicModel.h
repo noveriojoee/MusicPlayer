@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) NSString <Optional> *trackName;
 //@property (nonatomic) int trackNumber;
 @property (nonatomic) NSString <Optional> *trackPrice;
-@property (nonatomic) int trackTimeMillis;
+//@property (nonatomic) int trackTimeMillis;
 @property (nonatomic) NSString <Optional> *wrapperType;
 
 @end

@@ -21,11 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property MusicModel* selectedMusic;
 @property NSMutableArray<MusicModel> *models;
 @property long modelsCount;
+@property BOOL isPlaying;
 
 
--(void)setSelectedMusicWithIndex : (int)itemIndex;
+-(void)setSelectedMusicWithIndex : (long)itemIndex;
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete;
--(void)playselectedsong;
 @end
 
 NS_ASSUME_NONNULL_END

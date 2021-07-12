@@ -9,24 +9,31 @@
 #import "MusicModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol MusicCardProtocol<NSObject>
+@protocol MusicCardDelegate<NSObject>
 
--(void)playSelectedMusicWithIndex : (int)index;
+-(void)playSelectedMusicFromCells : (UITableViewCell*)cell;
 
 @end
 
 
+
 @interface MusicCardTableViewCell : UITableViewCell
-@property id<MusicCardProtocol> delegate;
+@property id<MusicCardDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIImageView *imgCover;
 @property (weak, nonatomic) IBOutlet UILabel *lblSongName;
 @property (weak, nonatomic) IBOutlet UILabel *lblArtist;
 @property (weak, nonatomic) IBOutlet UILabel *lblAlbums;
-@property (weak, nonatomic) IBOutlet UIImageView *imgIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *playingIndicator;
+@property long cellindex;
 
 
--(void)setContentWithModel : (MusicModel*)model withMusicCardDelegate : (id<MusicCardProtocol>) delegate;
+-(void)setTrackIsStop;
+-(void)setTrackIsPause;
+-(void)setTrackIsPlay;
+-(void)setContentWithModel : (MusicModel*)model cellIndex : (long)index withMusicCardDelegate : (id<MusicCardDelegate>) delegate;
 
 @end
+
+
 
 NS_ASSUME_NONNULL_END

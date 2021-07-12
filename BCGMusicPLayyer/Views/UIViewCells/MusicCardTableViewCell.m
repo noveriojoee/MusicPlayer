@@ -16,15 +16,35 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
+    if (selected){
+        [self.delegate playSelectedMusicFromCells:self];
+    }
 }
 
--(void)setContentWithModel : (MusicModel*)model withMusicCardDelegate : (id<MusicCardProtocol>) delegate{
+-(void)setTrackIsStop{
+    [self.playingIndicator stopAnimating];
+    [self.playingIndicator setHidden:YES];
+}
+
+
+-(void)setTrackIsPause{
+    [self.playingIndicator stopAnimating];
+}
+
+-(void)setTrackIsPlay{
+    [self.playingIndicator setHidden:NO];
+    [self.playingIndicator startAnimating];
+}
+
+-(void)setContentWithModel : (MusicModel*)model cellIndex : (long)index withMusicCardDelegate : (id<MusicCardDelegate>) delegate{
     self.delegate = delegate;
+    self.cellindex = index;
+    NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: model.artworkUrl100]];
+    self.imgCover.image = [UIImage imageWithData: imageData];
     self.lblSongName.text = model.trackName;
     self.lblArtist.text = model.collectionArtistName;
     self.lblAlbums.text = model.collectionName;
+    [self.playingIndicator setHidden:YES];
 }
 
 @end
