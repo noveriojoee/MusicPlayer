@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (id)sharedManager;
 
--(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic<MusicModel*>*))onPerformWithUrlFinish;
+-(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic*))onPerformWithUrlFinish;
 
 @end
 

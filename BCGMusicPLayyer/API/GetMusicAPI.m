@@ -26,20 +26,20 @@
     return sharedMyManager;
 }
 
--(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic<MusicModel*>*))onPerformWithUrlFinish{
+-(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic*))onPerformWithUrlFinish{
     NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
     NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
     
     NSMutableURLRequest* httpRequest = [self getBasicGETAuthRequestWithEndpointUrl:endPointUrl];
     
     [NetworkingObject.sharedManager performRequestWithHTTPRequest:httpRequest onCompleted:^(id result) {
-        DTOGetMusic<MusicModel*> *responseObject = [DTOGetMusic<MusicModel*> new];
+        DTOGetMusic *responseObject = [DTOGetMusic new];
         if ([result isKindOfClass:NSString.class]){
             [responseObject setApiResponseWithMessage:(NSString*)result responseCode:@"499"];
         }else{
             JSONModelError* error;
             
-            responseObject = [[DTOGetMusic<MusicModel*> alloc] initWithString:[Serializer toJsonStringFromObject:result] error:&error];
+            responseObject = [[DTOGetMusic alloc] initWithString:[Serializer toJsonStringFromObject:result] error:&error];
             if(error != nil){
                 [responseObject setApiResponseWithMessage:@"Error Parsing Result" responseCode:@"99"];
             }else{

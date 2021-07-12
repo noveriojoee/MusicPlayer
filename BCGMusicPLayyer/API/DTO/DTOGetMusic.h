@@ -11,9 +11,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 @protocol DTOGetMusic;
-@interface DTOGetMusic <ObjectType> : BaseDTO
+@interface DTOGetMusic : BaseDTO
 @property NSString* resultCount;
-@property NSArray<ObjectType> *results;
+@property NSMutableArray<MusicModel,Optional> *results;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,11 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString* searchField;
 @property NSMutableArray* songList;
-@property NSArray<MusicModel*> *models;
+@property NSMutableArray<MusicModel> *models;
 @property long modelsCount;
 
 
+-(void)setSelectedMusicWithIndex : (int)itemIndex;
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete;
+-(void)playselectedsong;
 @end
 
 NS_ASSUME_NONNULL_END

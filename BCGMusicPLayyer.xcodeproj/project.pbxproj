@@ -20,6 +20,7 @@
 		DEE8BD98269C3F8D008073E7 /* Serializer.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD97269C3F8D008073E7 /* Serializer.m */; };
 		DEE8BDB1269C42F5008073E7 /* DTOGetMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */; };
 		DEE8BDB4269C4341008073E7 /* BaseDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB3269C4341008073E7 /* BaseDTO.m */; };
+		DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE8BDC1269C7A7F008073E7 /* AVKit.framework */; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -69,6 +70,7 @@
 		DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTOGetMusic.m; sourceTree = "<group>"; };
 		DEE8BDB2269C4341008073E7 /* BaseDTO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseDTO.h; sourceTree = "<group>"; };
 		DEE8BDB3269C4341008073E7 /* BaseDTO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseDTO.m; sourceTree = "<group>"; };
+		DEE8BDC1269C7A7F008073E7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCGMusicPLayyer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFF01D9269A185F00A21F86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DEFF01DA269A185F00A21F86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			files = (
 				DEDC530F269B069A006BF1CA /* uicomponents.framework in Frameworks */,
 				DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */,
+				DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */,
 				EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +106,7 @@
 		6E7D947C3CD6D24BE3B885BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEE8BDC1269C7A7F008073E7 /* AVKit.framework */,
 				DEE8BD93269C3F4A008073E7 /* Security.framework */,
 				DEDC530E269B069A006BF1CA /* uicomponents.framework */,
 				DEB40253269A3AF30018138B /* uicomponents.framework */,

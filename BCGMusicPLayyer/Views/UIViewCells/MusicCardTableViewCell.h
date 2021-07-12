@@ -6,13 +6,25 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MusicModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
+//@protocol MusicCardProtocol<NSObject>
+//
+//-(void)playSelectedMusicWithIndex : (int)index;
+//
+//@end
+
 @interface MusicCardTableViewCell : UITableViewCell
+@property id<MusicCardProtocol> delegate;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCover;
+@property (weak, nonatomic) IBOutlet UILabel *lblSongName;
+@property (weak, nonatomic) IBOutlet UILabel *lblArtist;
+@property (weak, nonatomic) IBOutlet UILabel *lblAlbums;
+@property (weak, nonatomic) IBOutlet UIImageView *imgIndicator;
 
 
--(void)setContentWithImageUrl : (NSString*) imgUrl songTitle : (NSString*) songTitle artist : (NSString*) artist albums : (NSString*) album;
+-(void)setContentWithModel : (MusicModel*)model withMusicCardDelegate : (id<MusicCardProtocol>) delegate;
 
 @end
 

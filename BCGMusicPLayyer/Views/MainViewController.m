@@ -37,16 +37,22 @@
 #pragma tableview delegates
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MusicCardTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"song_item_template" forIndexPath:indexPath];
+    if (indexPath.row < self.viewModel.modelsCount){
+        MusicModel* musicItem = (MusicModel*)[self.viewModel.models objectAtIndex:indexPath.row];
+        
+        [cell setContentWithModel:musicItem withMusicCardDelegate:self];
+        return cell;
+    }else{
+        return nil;
+    }
     
-    MusicModel* musicItem = [self.viewModel.models objectAtIndex:indexPath.row];
     
-    [cell setContentWithImageUrl:@"xx" songTitle:musicItem.collectionName artist:musicItem.artistName albums:musicItem.collectionName];
-    
-    return cell;
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"testing");
+    [self.viewModel setSelectedMusicWithIndex:indexPath.row];
+    [self.viewModel playselectedsong];
+
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -57,7 +63,6 @@
     return 125;
 }
 #pragma end
-
 
 
 @end
