@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
 		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
-		DEDC530F269B069A006BF1CA /* uicomponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC530E269B069A006BF1CA /* uicomponents.framework */; };
-		DEDC5310269B069A006BF1CA /* uicomponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEDC530E269B069A006BF1CA /* uicomponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */; };
 		DEE8BD4C269C3934008073E7 /* MusicCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEE8BD24269C37D2008073E7 /* MusicCardTableViewCell.xib */; };
 		DEE8BD5E269C39E7008073E7 /* NetworkingObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD5D269C39E7008073E7 /* NetworkingObject.m */; };
@@ -29,20 +27,6 @@
 		DEFF01EC269A186000A21F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01EB269A186000A21F86 /* main.m */; };
 		EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DEDC5311269B069B006BF1CA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DEDC5310269B069A006BF1CA /* uicomponents.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEDC530F269B069A006BF1CA /* uicomponents.framework in Frameworks */,
 				DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */,
 				DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */,
 				EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */,
@@ -289,7 +272,7 @@
 				DEFF01D2269A185F00A21F86 /* Sources */,
 				DEFF01D3269A185F00A21F86 /* Frameworks */,
 				DEFF01D4269A185F00A21F86 /* Resources */,
-				DEDC5311269B069B006BF1CA /* Embed Frameworks */,
+				8143FB402655E0CD3565792A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,6 +348,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8143FB402655E0CD3565792A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

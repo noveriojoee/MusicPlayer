@@ -2,7 +2,7 @@
 platform :ios, '10.0'
 
 def dev_frameworks
-#  pod 'uicomponents', :path => '../UIComponents'
+  pod 'uicomponents', :git => 'https://github.com/noveriojoee/UIComponents.git'
   pod 'JSONModel'
   pod 'AFNetworking', '~> 3.0'
 end

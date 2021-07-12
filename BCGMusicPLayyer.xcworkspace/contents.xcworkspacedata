@@ -2,15 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../uicomponents/uicomponents.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:BCGMusicPLayyer.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../uicomponents/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
