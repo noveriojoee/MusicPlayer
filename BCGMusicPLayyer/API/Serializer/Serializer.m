@@ -48,4 +48,13 @@
     hash = [hash stringByReplacingOccurrencesOfString:@">" withString:@""];
     return hash;
 }
++(NSString*)formattedDuration:(NSTimeInterval)interval{
+    NSDateComponentsFormatter *formatter = [[NSDateComponentsFormatter alloc] init];
+    formatter.allowedUnits = NSCalendarUnitHour | NSCalendarUnitMinute;
+    formatter.zeroFormattingBehavior = NSDateComponentsFormatterZeroFormattingBehaviorPad;
+    NSString *string = [formatter stringFromTimeInterval:interval];
+    NSLog(@"%@", string);
+    // output: 0:20:34
+    return string;
+}
 @end

@@ -7,20 +7,13 @@
 
 #import "MainViewModel.h"
 #import "GetMusicAPI.h"
-#import <AVKit/AVKit.h>
 
-@interface MainViewModel()
-@property AVPlayer *songPlayer;
-@property MusicModel* selectedMusic;
-@end
 
 @implementation MainViewModel
 -(id)init{
     if (self == [super init]){
         self.modelsCount = 0;
         self.searchField = @"";
-        self.songList = [NSMutableArray new];
-        
     }
     return self;
 }
@@ -44,18 +37,6 @@
     }];
 }
 
--(void)playselectedsong{
-    AVPlayer *player = [[AVPlayer alloc]initWithURL:[NSURL URLWithString:self.selectedMusic.previewUrl]];
-    self.songPlayer = player;
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(playerItemDidReachEnd:)
-                                                 name:AVPlayerItemDidPlayToEndTimeNotification
-                                               object:[self.songPlayer currentItem]];
-    [self.songPlayer addObserver:self forKeyPath:@"status" options:0 context:nil];
-//    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-
-    [self.songPlayer play];
-}
 
 //- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 //
@@ -74,10 +55,5 @@
 //    }
 //}
 
-- (void)playerItemDidReachEnd:(NSNotification *)notification {
-
- //  code here to play next sound file
-
-}
 
 @end

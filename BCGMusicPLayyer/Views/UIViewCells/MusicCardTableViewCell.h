@@ -9,11 +9,12 @@
 #import "MusicModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-//@protocol MusicCardProtocol<NSObject>
-//
-//-(void)playSelectedMusicWithIndex : (int)index;
-//
-//@end
+@protocol MusicCardProtocol<NSObject>
+
+-(void)playSelectedMusicWithIndex : (int)index;
+
+@end
+
 
 @interface MusicCardTableViewCell : UITableViewCell
 @property id<MusicCardProtocol> delegate;

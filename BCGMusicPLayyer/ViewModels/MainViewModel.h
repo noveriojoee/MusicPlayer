@@ -6,14 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVKit/AVKit.h>
 #import "MusicModel.h"
+
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewModel : NSObject
 
+@property AVAudioPlayer *songPlayer;
 @property NSString* searchField;
-@property NSMutableArray* songList;
+@property MusicModel* selectedMusic;
 @property NSMutableArray<MusicModel> *models;
 @property long modelsCount;
 
