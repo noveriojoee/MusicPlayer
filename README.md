@@ -6,10 +6,12 @@ i'm writing the code using MVVM pattern here..
 
 ###Supported features.
 1. You supposed to be able using xcode emulator for this one :D means you can also using any iphone with ios 10 as the latest
+
 ###Supported features.
 1. Show list from the itunes search
 2. Play preview
 3. Show and hide the toogle button
+
 ###Requirements to build the app
 1. Please use xcode 11 above :( (i'm using xcode 12.4)
 
