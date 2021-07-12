@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		DEE8BDB1269C42F5008073E7 /* DTOGetMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB0269C42F5008073E7 /* DTOGetMusic.m */; };
 		DEE8BDB4269C4341008073E7 /* BaseDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BDB3269C4341008073E7 /* BaseDTO.m */; };
 		DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE8BDC1269C7A7F008073E7 /* AVKit.framework */; };
+		DEE8BDF4269CA6E8008073E7 /* uicomponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB40253269A3AF30018138B /* uicomponents.framework */; };
+		DEE8BDF5269CA6E8008073E7 /* uicomponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEB40253269A3AF30018138B /* uicomponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEFF01DB269A185F00A21F86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DA269A185F00A21F86 /* AppDelegate.m */; };
 		DEFF01DE269A185F00A21F86 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01DD269A185F00A21F86 /* SceneDelegate.m */; };
 		DEFF01E1269A185F00A21F86 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01E0269A185F00A21F86 /* MainViewController.m */; };
@@ -27,6 +29,20 @@
 		DEFF01EC269A186000A21F86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF01EB269A186000A21F86 /* main.m */; };
 		EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEE8BDF6269CA6E8008073E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DEE8BDF5269CA6E8008073E7 /* uicomponents.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1C14B05C279D55799455FC60 /* Pods-BCGMusicPLayyer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +95,7 @@
 			files = (
 				DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */,
 				DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */,
+				DEE8BDF4269CA6E8008073E7 /* uicomponents.framework in Frameworks */,
 				EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +289,7 @@
 				DEFF01D2269A185F00A21F86 /* Sources */,
 				DEFF01D3269A185F00A21F86 /* Frameworks */,
 				DEFF01D4269A185F00A21F86 /* Resources */,
-				8143FB402655E0CD3565792A /* [CP] Copy Pods Resources */,
+				DEE8BDF6269CA6E8008073E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,23 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8143FB402655E0CD3565792A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

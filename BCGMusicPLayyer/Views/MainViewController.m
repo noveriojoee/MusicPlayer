@@ -13,13 +13,12 @@
 
 @property (weak, nonatomic) IBOutlet CustomTextField *tfSearchField;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
-@property MusicCardTableViewCell* selectedCell;
 @property (weak, nonatomic) IBOutlet UIView *playingView;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UISlider *sliders;
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
 
-
+@property MusicCardTableViewCell* selectedCell;
 @property CGRect hiddenPlayingFrame;
 @property CGRect showPlayingFrame;
 
@@ -29,8 +28,19 @@
 @implementation MainViewController
 
 -(void)setTfSearchField:(CustomTextField *)tfSearchField{
+                       
     [tfSearchField bind:^(NSString *value) {
         self.viewModel.searchField = value;
+    }];
+    
+    [tfSearchField bindOnEndValueChange:^(NSString *value) {
+        [self.viewModel searchMusicWithCompletion:^(NSString *response) {
+            [self hideMusicView:nil];
+            if([response isEqualToString:@"OK"]){
+                [self.tblView reloadData];
+            }
+        }];
+
     }];
     _tfSearchField = tfSearchField;
 }
@@ -41,8 +51,6 @@
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
     [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -58,6 +66,7 @@
         }
     }];
 }
+
 
 - (IBAction)btnFF:(id)sender {
 }
@@ -169,7 +178,7 @@
         
     }
                      completion:^(BOOL finished){
-       
+        
     }];
 }
 #pragma end

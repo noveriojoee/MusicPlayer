@@ -133,7 +133,7 @@
                         <outlet property="playingView" destination="Qi3-lG-vP0" id="gsO-uL-AaB"/>
                         <outlet property="sliders" destination="jmE-Gz-7Ii" id="cQe-os-D81"/>
                         <outlet property="tblView" destination="5RK-LO-I3o" id="fvh-uy-cI6"/>
-                        <outlet property="tfSearchField" destination="gvF-9X-B9L" id="E0S-qI-FbQ"/>
+                        <outlet property="tfSearchField" destination="gvF-9X-B9L" id="cKx-WL-vjf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
