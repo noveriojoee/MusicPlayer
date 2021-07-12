@@ -7,9 +7,11 @@
 
 #import <UIKit/UIKit.h>
 #import <uicomponents/uicomponents.h>
+#import "MainViewModel.h"
 
 
 @interface MainViewController : BaseViewController
 
+@property MainViewModel* viewModel;
 
 @end

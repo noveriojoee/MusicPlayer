@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MusicCardTableViewCell : UITableViewCell
 
 
--(void)setContentWithString : (NSString*) imgUrl songTitle : (NSString*) songTitle artist : (NSString*) artist albums : (NSString*) album;
+-(void)setContentWithImageUrl : (NSString*) imgUrl songTitle : (NSString*) songTitle artist : (NSString*) artist albums : (NSString*) album;
 
 @end
 

@@ -14,7 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString* searchField;
 @property NSMutableArray* songList;
+@property NSArray<MusicModel*> *models;
+@property long modelsCount;
 
+
+-(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,9 +6,16 @@
 //
 
 #import "GetMusicAPI.h"
-#import "MusicModel.h"
 
 @implementation GetMusicAPI
+
+
+-(id)init{
+    if ( self = [super init] ) {
+        self.baseUrl = @"https://run.mocky.io/v3";
+    }
+    return self;
+}
 
 + (id)sharedManager {
     static GetMusicAPI *sharedMyManager = nil;
@@ -19,31 +26,27 @@
     return sharedMyManager;
 }
 
--(id)init{
-    if ( self = [super init] ) {
-        self.baseUrl = @"https://run.mocky.io/v3";
-    }
-    return self;
-}
-
--(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(APIResult<MusicModel*>*))onPerformWithUrlFinish{
+-(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic<MusicModel*>*))onPerformWithUrlFinish{
     NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
     NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
     
     NSMutableURLRequest* httpRequest = [self getBasicGETAuthRequestWithEndpointUrl:endPointUrl];
     
     [NetworkingObject.sharedManager performRequestWithHTTPRequest:httpRequest onCompleted:^(id result) {
+        DTOGetMusic<MusicModel*> *responseObject = [DTOGetMusic<MusicModel*> new];
         if ([result isKindOfClass:NSString.class]){
-            [responseObject setApiResponseMessage:(NSString*)result];
+            [responseObject setApiResponseWithMessage:(NSString*)result responseCode:@"499"];
         }else{
             JSONModelError* error;
-            responseObject.serviceModel = [[ParameterModels alloc] initWithString:[Serializer toJsonStringFromObject:result] error:&error];
+            
+            responseObject = [[DTOGetMusic<MusicModel*> alloc] initWithString:[Serializer toJsonStringFromObject:result] error:&error];
             if(error != nil){
-                [responseObject setApiResponseMessage:@"Unknown Error"];
+                [responseObject setApiResponseWithMessage:@"Error Parsing Result" responseCode:@"99"];
             }else{
-                [responseObject setApiResponseMessage:@"OK"];
+                [responseObject setApiResponseWithMessage:@"OK" responseCode:@"200"];
             }
         }
+        onPerformWithUrlFinish(responseObject);
     }];
     
 }

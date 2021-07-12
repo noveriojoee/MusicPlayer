@@ -6,7 +6,30 @@
 //
 
 #import "MainViewModel.h"
+#import "GetMusicAPI.h"
 
 @implementation MainViewModel
-// https://run.mocky.io/v3/5fbf702c-7cd0-4005-a9c9-eeb115370156
+-(id)init{
+    if (self == [super init]){
+        self.modelsCount = 0;
+        self.searchField = @"";
+    }
+    return self;
+}
+
+-(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete{
+    [GetMusicAPI.sharedManager searchMusicWithStringParam:self.searchField onCompletion:^(DTOGetMusic<MusicModel *> *apiResponse) {
+        if ([apiResponse.apiResponseCode isEqualToString:@"200"]){
+            if (apiResponse.results != nil){
+                self.models = apiResponse.results;
+                self.modelsCount = [apiResponse.results count];
+
+                onComplete(@"OK");
+            }
+        }else{
+            onComplete(@"Failed To Fetch Music");
+        }
+    }];
+}
+
 @end

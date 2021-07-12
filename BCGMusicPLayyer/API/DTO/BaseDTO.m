@@ -9,7 +9,7 @@
 
 @implementation BaseDTO
 
--(void)setApiResponseMessageWithMessage : (NSString*) message responseCode : (NSString*) responseCode{
+-(void)setApiResponseWithMessage : (NSString*) message responseCode : (NSString*) responseCode{
     self.apiResponseCode = responseCode;
     self.apiResponseMessage = message;
 }

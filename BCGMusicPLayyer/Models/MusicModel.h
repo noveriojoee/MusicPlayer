@@ -10,12 +10,15 @@
 #import <JSONModel/JSONModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@protocol MusicModel;
 @interface MusicModel : JSONModel
 
-@property (nonatomic) NSString <Optional> *title;
-@property (nonatomic) NSString <Optional> *artist;
-@property (nonatomic) NSString <Optional> *songDescription;
+@property (nonatomic) NSString <Optional> *trackCensoredName;
+@property (nonatomic) NSString <Optional> *artistName;
+@property (nonatomic) NSString <Optional> *previewUrl;
+@property (nonatomic) NSString <Optional> *trackViewUrl;
+@property (nonatomic) NSString <Optional> *artworkUrl100;
+@property (nonatomic) NSString <Optional> *collectionName;
 
 @end
 

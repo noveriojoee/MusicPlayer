@@ -6,13 +6,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseDTO.h"
+#import "MusicModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-@interface DTOGetMusic <ObjectType> : NSObject
+@protocol DTOGetMusic;
+@interface DTOGetMusic <ObjectType> : BaseDTO
 @property NSString* resultCount;
 @property NSArray<ObjectType> *results;
-
 @end
 
 NS_ASSUME_NONNULL_END

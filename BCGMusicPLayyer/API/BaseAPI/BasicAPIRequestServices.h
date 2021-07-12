@@ -6,10 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Serializer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BasicAPIRequestServices : NSObject
+@interface BasicAPIRequestServices <ObjectType> : NSObject
 //Noverio Joe Notes : Incase we have to calculate signature set before request
 @property NSString* cStringId;
 @property NSString* cStringS;
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString* signature;
 @property NSString* timeStamp;
 @property NSString* baseUrl;
+
 
 -(NSMutableURLRequest*)getBasicPOSTAuthRequest : (NSDictionary*)requestPayloadJson endpointUrl : (NSString*)url;
 -(NSMutableURLRequest*)getBasicGETAuthRequestWithEndpointUrl : (NSString*)url;

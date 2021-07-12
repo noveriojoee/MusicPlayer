@@ -6,7 +6,6 @@
 //  Reponsible : to construct request Header before performing request
 
 #import "BasicAPIRequestServices.h"
-#import "Serializer.h"
 
 @implementation BasicAPIRequestServices
 
@@ -25,6 +24,8 @@
     }
     return self;
 }
+
+
 
 
 -(NSString*)getGenerateAuthSignatureSet{

@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
--(void)setContentWithString : (NSString*) imgUrl songTitle : (NSString*) songTitle artist : (NSString*) artist albums : (NSString*) album{
+-(void)setContentWithImageUrl : (NSString*) imgUrl songTitle : (NSString*) songTitle artist : (NSString*) artist albums : (NSString*) album{
     self.lblTitle.text = songTitle;
     self.lblArtist.text = artist;
     self.lblAlbumTitle.text = album;
