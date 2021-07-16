@@ -24,6 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL isPlaying;
 
 
+-(void)playTrack;
+-(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate;
+-(void)pauseTrack;
+
 -(void)setSelectedMusicWithIndex : (long)itemIndex;
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete;
 @end

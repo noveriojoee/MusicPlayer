@@ -23,13 +23,43 @@
     self.selectedMusic = [self.models objectAtIndex:itemIndex];
 }
 
+-(void)playTrack{
+    if (self.songPlayer != nil){
+        [self.songPlayer play];
+        self.isPlaying = YES;
+    }else{
+        self.isPlaying = NO;
+    }
+}
+
+-(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate{
+    [self setSelectedMusicWithIndex:index];
+    
+    NSURL *url = [NSURL URLWithString:self.selectedMusic.previewUrl];
+    NSData *soundData = [NSData dataWithContentsOfURL:url];
+    self.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
+    self.songPlayer.delegate = delegate;
+    
+    [self playTrack];
+
+}
+-(void)pauseTrack{
+    if (self.songPlayer != nil){
+        [self.songPlayer pause];
+        self.isPlaying = NO;
+    }else{
+        self.isPlaying = NO;
+    }
+}
+
+
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete{
     [GetMusicAPI.sharedManager searchMusicWithStringParam:self.searchField onCompletion:^(DTOGetMusic *apiResponse) {
         if ([apiResponse.apiResponseCode isEqualToString:@"200"]){
             if (apiResponse.results != nil){
                 self.models = apiResponse.results;
                 self.modelsCount = [apiResponse.results count];
-
+                
                 onComplete(@"OK");
             }
         }else{

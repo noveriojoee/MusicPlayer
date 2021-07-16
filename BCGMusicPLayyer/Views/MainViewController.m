@@ -21,7 +21,7 @@
 @property CGRect hiddenPlayingFrame;
 @property CGRect showPlayingFrame;
 @property CGFloat lastContentOffset;
-
+@property long selectedIndexSong;
 
 @end
 
@@ -46,6 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewModel = [MainViewModel new];
+    self.selectedIndexSong = 99;
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
     [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
@@ -58,7 +59,7 @@
     
     
     [self.viewModel searchMusicWithCompletion:^(NSString *response) {
-        [self hideMusicView:nil];
+        [self showMusicView:nil];
         if([response isEqualToString:@"OK"]){
             [self.tblView reloadData];
         }
@@ -67,22 +68,38 @@
 
 
 - (IBAction)btnFF:(id)sender {
+    if (self.selectedIndexSong < self.viewModel.modelsCount){
+        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.selectedIndexSong+1 inSection:0];
+        [self.tblView selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
 }
 
 - (IBAction)btnBF:(id)sender {
+    if (self.selectedIndexSong > 0){
+        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.selectedIndexSong-1 inSection:0];
+        [self.tblView selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
 }
 
 - (IBAction)btnPlay:(id)sender {
-    [self.viewModel.songPlayer play];
-    [self.btnPlay setHidden:YES];
-    [self.btnPause setHidden:NO];
+    if (self.selectedIndexSong == 99){
+        //no music are selected, then play the first row
+        self.selectedIndexSong = 0;
+        [self.viewModel setSelectedMusicWithIndex:0];
+    }
+    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:YES]){
+        [self.btnPlay setHidden:YES];
+        [self.btnPause setHidden:NO];
+        [self.selectedCell setTrackIsPlay];
+    };
     
 }
 - (IBAction)btnPause:(id)sender {
-    [self.viewModel.songPlayer pause];
-    [self.selectedCell setTrackIsPause];
-    [self.btnPause setHidden:YES];
-    [self.btnPlay setHidden:NO];
+    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:YES] == NO){
+        [self.selectedCell setTrackIsPause];
+        [self.btnPause setHidden:YES];
+        [self.btnPlay setHidden:NO];
+    };
 }
 
 
@@ -124,14 +141,15 @@
 
 #pragma MusicCardDelegate
 -(void)playSelectedMusicFromCells : (MusicCardTableViewCell*)cell{
-    if ([self playSongWithIndex:cell.cellindex clickWithButtonPlay:NO]){
+    self.selectedIndexSong = cell.cellindex;
+    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:NO]){
         if (self.selectedCell != nil){
             [self.selectedCell setTrackIsStop];
         }
         self.selectedCell = cell;
-        [cell setTrackIsPlay];
         [self.btnPlay setHidden:YES];
         [self.btnPause setHidden:NO];
+        [self.selectedCell setTrackIsPlay];
         [self showMusicView:cell];
     }
 }
@@ -139,17 +157,31 @@
 
 #pragma avPlayerDelegate
 -(BOOL)playSongWithIndex : (long)index clickWithButtonPlay : (BOOL)isClickButtonPlay{
-    if (self.viewModel.isPlaying == NO){
-        [self.viewModel setSelectedMusicWithIndex:index];
-        NSURL *url = [NSURL URLWithString:self.viewModel.selectedMusic.previewUrl];
-        NSData *soundData = [NSData dataWithContentsOfURL:url];
-        self.viewModel.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
-        self.viewModel.songPlayer.delegate = self;
-        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-        [self.viewModel.songPlayer play];
-        return YES;
+    BOOL returnValue = NO;
+    if (isClickButtonPlay){
+        //Click by play and pause button
+        if (self.viewModel.isPlaying == NO){
+            if (self.viewModel.selectedMusic != nil){
+                [self.viewModel setSelectedMusicWithIndex:index];
+                [self.viewModel playTrack];
+                returnValue = YES;
+            }
+        }else if(self.selectedIndexSong!=index){
+            //pressing button bf and ff
+            self.selectedIndexSong = index;
+            [self.viewModel playNewTrackWithIndex:self.selectedIndexSong delegate:self];
+            returnValue = YES;
+        }else{
+            [self.viewModel pauseTrack];
+            returnValue = NO;
+        }
+    }else{
+        //Click by table row
+            [self.viewModel playNewTrackWithIndex:self.selectedIndexSong delegate:self];
+            returnValue = YES;
     }
-    return NO;
+    
+    return returnValue;
 }
 -(void)updateProgress:(NSString*)temp{
     NSLog(@"%f",self.viewModel.songPlayer.duration);
