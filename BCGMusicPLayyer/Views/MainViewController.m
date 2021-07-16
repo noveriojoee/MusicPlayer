@@ -4,7 +4,6 @@
 //
 //  Created by Noverio Joe on 11/07/21.
 //
-
 #import "MainViewController.h"
 #import "MusicCardTableViewCell.h"
 #import "Serializer.h"
@@ -21,6 +20,7 @@
 @property MusicCardTableViewCell* selectedCell;
 @property CGRect hiddenPlayingFrame;
 @property CGRect showPlayingFrame;
+@property CGFloat lastContentOffset;
 
 
 @end
@@ -28,19 +28,17 @@
 @implementation MainViewController
 
 -(void)setTfSearchField:(CustomTextField *)tfSearchField{
-                       
     [tfSearchField bind:^(NSString *value) {
         self.viewModel.searchField = value;
     }];
     
     [tfSearchField bindOnEndValueChange:^(NSString *value) {
+        NSLog(@"end");
         [self.viewModel searchMusicWithCompletion:^(NSString *response) {
-            [self hideMusicView:nil];
             if([response isEqualToString:@"OK"]){
                 [self.tblView reloadData];
             }
         }];
-
     }];
     _tfSearchField = tfSearchField;
 }
@@ -85,7 +83,6 @@
     [self.selectedCell setTrackIsPause];
     [self.btnPause setHidden:YES];
     [self.btnPlay setHidden:NO];
-    [self hideMusicView:sender];
 }
 
 
@@ -100,6 +97,19 @@
         return cell;
     }else{
         return nil;
+    }
+}
+
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    self.lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (self.lastContentOffset < scrollView.contentOffset.y){
+        [self hideMusicView:scrollView];
+    }else if (self.lastContentOffset > scrollView.contentOffset.y){
+        [self showMusicView:scrollView];
+        
     }
 }
 

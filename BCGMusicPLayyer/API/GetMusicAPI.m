@@ -30,7 +30,12 @@
 -(void)searchMusicWithStringParam : (NSString*) searchParam onCompletion : (void (^)(DTOGetMusic*))onPerformWithUrlFinish{
 //    NSString* actionMethod = @"/5fbf702c-7cd0-4005-a9c9-eeb115370156";
 //    NSString* endPointUrl = [self.baseUrl stringByAppendingString:actionMethod];
-    NSString* endPointUrl = [self.baseUrl stringByReplacingOccurrencesOfString:@"[paramSearch]" withString:@"music"];
+    if ([searchParam length]<=0){
+        searchParam = @"music";
+    }else{
+        searchParam = [searchParam stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    }
+    NSString* endPointUrl = [self.baseUrl stringByReplacingOccurrencesOfString:@"[paramSearch]" withString:searchParam];
     NSMutableURLRequest* httpRequest = [self getBasicGETAuthRequestWithEndpointUrl:endPointUrl];
     
     [NetworkingObject.sharedManager performRequestWithHTTPRequest:httpRequest onCompleted:^(id result) {
