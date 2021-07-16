@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property AVAudioPlayer *songPlayer;
 @property NSString* searchField;
 @property MusicModel* selectedMusic;
+@property long selectedIndexSong;
 @property NSMutableArray<MusicModel> *models;
 @property long modelsCount;
 @property BOOL isPlaying;

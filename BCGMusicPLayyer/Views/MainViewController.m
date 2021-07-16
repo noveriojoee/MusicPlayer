@@ -21,7 +21,6 @@
 @property CGRect hiddenPlayingFrame;
 @property CGRect showPlayingFrame;
 @property CGFloat lastContentOffset;
-@property long selectedIndexSong;
 
 @end
 
@@ -46,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewModel = [MainViewModel new];
-    self.selectedIndexSong = 99;
+    
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
     [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
@@ -62,32 +61,33 @@
         [self showMusicView:nil];
         if([response isEqualToString:@"OK"]){
             [self.tblView reloadData];
+            
         }
     }];
 }
 
 
 - (IBAction)btnFF:(id)sender {
-    if (self.selectedIndexSong < self.viewModel.modelsCount){
-        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.selectedIndexSong+1 inSection:0];
+    if (self.viewModel.selectedIndexSong < self.viewModel.modelsCount){
+        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.viewModel.selectedIndexSong+1 inSection:0];
         [self.tblView selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     }
 }
 
 - (IBAction)btnBF:(id)sender {
-    if (self.selectedIndexSong > 0){
-        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.selectedIndexSong-1 inSection:0];
+    if (self.viewModel.selectedIndexSong > 0){
+        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:self.viewModel.selectedIndexSong-1 inSection:0];
         [self.tblView selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     }
 }
 
 - (IBAction)btnPlay:(id)sender {
-    if (self.selectedIndexSong == 99){
+    if (self.viewModel.selectedIndexSong == 0){
         //no music are selected, then play the first row
-        self.selectedIndexSong = 0;
-        [self.viewModel setSelectedMusicWithIndex:0];
+        NSIndexPath* selectedCellIndexPath= [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tblView selectRowAtIndexPath:selectedCellIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     }
-    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:YES]){
+    if ([self playSongWithIndex:self.viewModel.selectedIndexSong clickWithButtonPlay:YES]){
         [self.btnPlay setHidden:YES];
         [self.btnPause setHidden:NO];
         [self.selectedCell setTrackIsPlay];
@@ -95,7 +95,7 @@
     
 }
 - (IBAction)btnPause:(id)sender {
-    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:YES] == NO){
+    if ([self playSongWithIndex:self.viewModel.selectedIndexSong clickWithButtonPlay:YES] == NO){
         [self.selectedCell setTrackIsPause];
         [self.btnPause setHidden:YES];
         [self.btnPlay setHidden:NO];
@@ -141,8 +141,8 @@
 
 #pragma MusicCardDelegate
 -(void)playSelectedMusicFromCells : (MusicCardTableViewCell*)cell{
-    self.selectedIndexSong = cell.cellindex;
-    if ([self playSongWithIndex:self.selectedIndexSong clickWithButtonPlay:NO]){
+    self.viewModel.selectedIndexSong = cell.cellindex;
+    if ([self playSongWithIndex:self.viewModel.selectedIndexSong clickWithButtonPlay:NO]){
         if (self.selectedCell != nil){
             [self.selectedCell setTrackIsStop];
         }
@@ -166,10 +166,10 @@
                 [self.viewModel playTrack];
                 returnValue = YES;
             }
-        }else if(self.selectedIndexSong!=index){
+        }else if(self.viewModel.selectedIndexSong!=index){
             //pressing button bf and ff
-            self.selectedIndexSong = index;
-            [self.viewModel playNewTrackWithIndex:self.selectedIndexSong delegate:self];
+            self.viewModel.selectedIndexSong = index;
+            [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
             returnValue = YES;
         }else{
             [self.viewModel pauseTrack];
@@ -177,7 +177,7 @@
         }
     }else{
         //Click by table row
-            [self.viewModel playNewTrackWithIndex:self.selectedIndexSong delegate:self];
+            [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
             returnValue = YES;
     }
     

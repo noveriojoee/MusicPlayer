@@ -13,6 +13,7 @@
 -(id)init{
     if (self == [super init]){
         self.modelsCount = 0;
+        self.selectedIndexSong = 0;
         self.searchField = @"";
         self.isPlaying = NO;
     }
@@ -57,6 +58,7 @@
     [GetMusicAPI.sharedManager searchMusicWithStringParam:self.searchField onCompletion:^(DTOGetMusic *apiResponse) {
         if ([apiResponse.apiResponseCode isEqualToString:@"200"]){
             if (apiResponse.results != nil){
+                self.selectedIndexSong = 0;
                 self.models = apiResponse.results;
                 self.modelsCount = [apiResponse.results count];
                 
