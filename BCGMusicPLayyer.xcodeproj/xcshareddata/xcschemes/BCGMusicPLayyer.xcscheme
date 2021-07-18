@@ -48,6 +48,16 @@
                ReferencedContainer = "container:BCGMusicPLayyer.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DE8CC9AF26A41F9B003F1CEE"
+               BuildableName = "BCGMusicPlayyerUITest.xctest"
+               BlueprintName = "BCGMusicPlayyerUITest"
+               ReferencedContainer = "container:BCGMusicPLayyer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -16,3 +16,7 @@ target 'BCGMusicPLayyer' do
   dev_frameworks
   
 end
+
+target 'BCGMusicPlayyerUITest' do
+  
+end
