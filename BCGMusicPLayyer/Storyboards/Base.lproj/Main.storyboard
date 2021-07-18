@@ -30,6 +30,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gvF-9X-B9L" customClass="CustomTextField">
                                         <rect key="frame" x="5" y="8" width="404" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="tf_search"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -47,6 +48,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-t2-A9B">
                                         <rect key="frame" x="192" y="17.5" width="30" height="26.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="btn_play"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="FPU-ln-eXt"/>
                                             <constraint firstAttribute="height" constant="30" id="eh9-zy-MY0"/>
@@ -58,6 +60,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eue-LY-Nyi">
                                         <rect key="frame" x="297" y="18" width="30" height="26"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="btn_ff"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7Dz-lc-oxc"/>
                                             <constraint firstAttribute="width" constant="30" id="iTI-Pk-icm"/>
@@ -69,6 +72,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4N-t9-q4M">
                                         <rect key="frame" x="87" y="18" width="30" height="26"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="btn_bf"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="SKi-vF-c6x"/>
                                             <constraint firstAttribute="height" constant="30" id="aqc-3Y-8yq"/>
@@ -86,6 +90,7 @@
                                     </slider>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKf-Ia-6x4">
                                         <rect key="frame" x="184" y="18" width="46" height="26"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="btn_pause"/>
                                         <state key="normal" backgroundImage="pause.fill" catalog="system"/>
                                         <connections>
                                             <action selector="btnPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9OK-bO-fTO"/>

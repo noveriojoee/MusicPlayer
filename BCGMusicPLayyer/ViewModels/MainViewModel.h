@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)playTrack;
--(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate;
+-(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate onCompleted : (void (^)(NSString*))onDownloadTrackFinish;
 -(void)pauseTrack;
 -(BOOL)stopTrack;
 

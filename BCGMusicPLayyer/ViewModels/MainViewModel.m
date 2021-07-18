@@ -33,16 +33,18 @@
     }
 }
 
--(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate{
+-(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate onCompleted : (void (^)(NSString*))onDownloadTrackFinish{
     [self setSelectedMusicWithIndex:index];
-    
-    NSURL *url = [NSURL URLWithString:self.selectedMusic.previewUrl];
-    NSData *soundData = [NSData dataWithContentsOfURL:url];
-    self.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
     self.songPlayer.delegate = delegate;
-    
-    [self playTrack];
-
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
+        NSURL *url = [NSURL URLWithString:self.selectedMusic.previewUrl];
+        NSData *soundData = [NSData dataWithContentsOfURL:url];
+           dispatch_async(dispatch_get_main_queue(), ^{
+               self.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
+               [self playTrack];
+               onDownloadTrackFinish(@"finish");
+           });
+       });
 }
 
 -(void)pauseTrack{
@@ -71,6 +73,7 @@
 
 
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete{
+    self.modelsCount = 0;
     [GetMusicAPI.sharedManager searchMusicWithStringParam:self.searchField onCompletion:^(DTOGetMusic *apiResponse) {
         if ([apiResponse.apiResponseCode isEqualToString:@"200"]){
             if (apiResponse.results != nil){

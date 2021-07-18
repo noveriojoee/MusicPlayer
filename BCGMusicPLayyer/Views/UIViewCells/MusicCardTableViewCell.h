@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setTrackIsStop;
 -(void)setTrackIsPause;
 -(void)setTrackIsPlay;
+-(void)setContentDefaukt;
 -(void)setContentWithModel : (MusicModel*)model cellIndex : (long)index withMusicCardDelegate : (id<MusicCardDelegate>) delegate;
 
 @end

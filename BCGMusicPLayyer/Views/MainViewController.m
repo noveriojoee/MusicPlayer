@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
 @property (weak, nonatomic) IBOutlet UISlider *slMusicTimeLine;
 
+@property NSMutableArray<UIView*> *defaultViewCells;
+
 @property MusicCardTableViewCell* selectedCell;
 @property NSTimer *timer;
 @property CGRect hiddenPlayingFrame;
@@ -48,7 +50,6 @@
     [super viewDidLoad];
     self.viewModel = [MainViewModel new];
     
-    
     self.slMusicTimeLine.maximumValue = 0;
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
@@ -60,8 +61,9 @@
     self.hiddenPlayingFrame= CGRectMake(0, (self.view.frame.size.height), self.playingView.frame.size.width, (self.playingView.frame.size.height));
     self.showPlayingFrame = CGRectMake(0, (self.view.frame.size.height - self.playingView.frame.size.height), self.playingView.frame.size.width, self.playingView.frame.size.height);
     
-    
+    [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
     [self.viewModel searchMusicWithCompletion:^(NSString *response) {
+        [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
         [self showMusicView:nil];
         if([response isEqualToString:@"OK"]){
             [self.tblView reloadData];
@@ -110,12 +112,15 @@
     MusicCardTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"song_item_template" forIndexPath:indexPath];
     if (indexPath.row < self.viewModel.modelsCount){
         MusicModel* musicItem = (MusicModel*)[self.viewModel.models objectAtIndex:indexPath.row];
-        
-        [cell setContentWithModel:musicItem cellIndex:indexPath.row withMusicCardDelegate:self];
-        return cell;
+        if (musicItem != nil){
+            [cell setContentWithModel:musicItem cellIndex:indexPath.row withMusicCardDelegate:self];
+        }else{
+            [cell setContentDefaukt];
+        }
     }else{
-        return nil;
+        [cell setContentDefaukt];
     }
+    return cell;
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
@@ -131,7 +136,12 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.modelsCount;
+    if (self.viewModel.modelsCount>0){
+        return self.viewModel.modelsCount;
+    }else{
+        return 3;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -171,8 +181,16 @@
         }else if(self.viewModel.selectedIndexSong!=index){
             //pressing button bf and ff
             self.viewModel.selectedIndexSong = index;
-            [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
-            self.slMusicTimeLine.value = 0;
+            [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
+            [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self onCompleted:^(NSString * message) {
+                [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
+                self.slMusicTimeLine.value = 0;
+                self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
+                [self.timer invalidate];
+                self.timer = nil;
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+            }];
+            
             returnValue = YES;
         }else{
             //button pause clicked
@@ -183,16 +201,16 @@
         }
     }else{
         //Click by table row
-        [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
-        self.slMusicTimeLine.value = 0;
+        [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
+        [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self onCompleted:^(NSString * message) {
+            self.slMusicTimeLine.value = 0;
+            self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
+            [self.timer invalidate];
+            self.timer = nil;
+            self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+            [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
+        }];
         returnValue = YES;
-    }
-    
-    if (returnValue == YES){
-        self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
-        [self.timer invalidate];
-        self.timer = nil;
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
     }
     
     return returnValue;

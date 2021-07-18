@@ -36,23 +36,32 @@
 //    [app.textFields[@"Search"] tap];
 //    [app.toolbars[@"Toolbar"].buttons[@"Done"] tap];
     
-    XCUIElement *searchTextField = app.textFields[@"Search"];
+    XCUIElement *searchTextField = app.textFields[@"tf_search"];
+    XCUIElement *btnPlay = app.textFields[@"btn_play"];
+    XCUIElement *btnPause = app.textFields[@"btn_pause"];
+    XCUIElement *btnFF = app.textFields[@"btn_ff"];
+    XCUIElement *btnBF = app.textFields[@"btn_bf"];
+    
+    
     sleep(1);
     [searchTextField tap];
     [searchTextField typeText:@"Adele Hello"];
     XCUIElement *doneButton = app.toolbars[@"Toolbar"].buttons[@"Done"];
     [doneButton tap];
     sleep(10);
-    [app.buttons[@"play"] tap];
+    [btnPlay tap];
+    sleep(5);
+    [btnPause tap];
     sleep(10);
-    [app.buttons[@"forward.end"] tap];
+    [btnFF tap];
     sleep(10);
-    [app.buttons[@"backward.end"] tap];
+    [btnBF tap];
     sleep(10);
-    [app.textFields[@"Search"] tap];
-//    while([searchTextField.value count] > 0){
-//        [app.keys[@"Delete"] tap];
-//    }
+    
+    [searchTextField tap];
+    while([searchTextField.value count] > 0){
+        [app.keys[@"Delete"] tap];
+    }
     [searchTextField typeText:@"Ariel Noah"];
     [doneButton tap];
     sleep(10);
