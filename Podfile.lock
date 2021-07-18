@@ -39,7 +39,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   uicomponents:
-    :commit: a0573b8d1c8765b68dd4cdf519448dccda72d0ed
+    :commit: d183497d563eff3503c0f2c28b9d2958cf14e4c8
     :git: https://github.com/noveriojoee/UIComponents.git
 
 SPEC CHECKSUMS:
