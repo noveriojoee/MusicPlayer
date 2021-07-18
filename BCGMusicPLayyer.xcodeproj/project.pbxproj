@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		176EC46D49DF2225D05AA02D /* libPods-BCGMusicPlayyerUITest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBC36AFFE048765214F441F4 /* libPods-BCGMusicPlayyerUITest.a */; };
 		DE8CC9B326A41F9B003F1CEE /* BCGMusicPlayyerUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CC9B226A41F9B003F1CEE /* BCGMusicPlayyerUITest.m */; };
-		DE8CC9D326A431E6003F1CEE /* uicomponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8CC9D226A431E6003F1CEE /* uicomponents.framework */; };
-		DE8CC9D426A431E6003F1CEE /* uicomponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE8CC9D226A431E6003F1CEE /* uicomponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
 		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
 		DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */; };
@@ -41,20 +39,6 @@
 			remoteInfo = BCGMusicPLayyer;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DE8CC9D526A431E6003F1CEE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DE8CC9D426A431E6003F1CEE /* uicomponents.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C8D545C1A289C10D09C4B51 /* Pods-BCGMusicPlayyerUITest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPlayyerUITest.debug.xcconfig"; path = "Target Support Files/Pods-BCGMusicPlayyerUITest/Pods-BCGMusicPlayyerUITest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,7 +100,6 @@
 			files = (
 				DEE8BD94269C3F4A008073E7 /* Security.framework in Frameworks */,
 				DEE8BDC2269C7A7F008073E7 /* AVKit.framework in Frameworks */,
-				DE8CC9D326A431E6003F1CEE /* uicomponents.framework in Frameworks */,
 				EC77CD34688723A3A687F9D9 /* libPods-BCGMusicPLayyer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +305,7 @@
 				DEFF01D2269A185F00A21F86 /* Sources */,
 				DEFF01D3269A185F00A21F86 /* Frameworks */,
 				DEFF01D4269A185F00A21F86 /* Resources */,
-				DE8CC9D526A431E6003F1CEE /* Embed Frameworks */,
+				866034DDA3B41E8DA7F3943B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -432,6 +415,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		866034DDA3B41E8DA7F3943B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
