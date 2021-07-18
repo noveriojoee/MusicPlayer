@@ -142,16 +142,18 @@
 #pragma MusicCardDelegate
 -(void)playSelectedMusicFromCells : (MusicCardTableViewCell*)cell{
     self.viewModel.selectedIndexSong = cell.cellindex;
-    if ([self playSongWithIndex:self.viewModel.selectedIndexSong clickWithButtonPlay:NO]){
-        if (self.selectedCell != nil){
-            [self.selectedCell setTrackIsStop];
-        }
-        self.selectedCell = cell;
-        [self.btnPlay setHidden:YES];
-        [self.btnPause setHidden:NO];
-        [self.selectedCell setTrackIsPlay];
-        [self showMusicView:cell];
+    
+    if (self.selectedCell != nil){
+        [self.selectedCell setTrackIsStop];
     }
+    
+    self.selectedCell = cell;
+    [self.btnPlay setHidden:YES];
+    [self.btnPause setHidden:NO];
+    [self.selectedCell setTrackIsPlay];
+    [self showMusicView:cell];
+
+    [self playSongWithIndex:self.viewModel.selectedIndexSong clickWithButtonPlay:NO];
 }
 #pragma end
 
