@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISlider *sliders;
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
 @property (weak, nonatomic) IBOutlet UISlider *slMusicTimeLine;
+@property (weak, nonatomic) IBOutlet UILabel *lblPlayedTrack;
 
 @property NSMutableArray<UIView*> *defaultViewCells;
 
@@ -106,7 +107,6 @@
         [self.btnPlay setHidden:NO];
     };
 }
-
 #pragma tableview delegates
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MusicCardTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"song_item_template" forIndexPath:indexPath];
@@ -176,6 +176,7 @@
             if (self.viewModel.selectedMusic != nil){
                 [self.viewModel setSelectedMusicWithIndex:index];
                 [self.viewModel playTrack];
+                self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
                 returnValue = YES;
             }
         }else if(self.viewModel.selectedIndexSong!=index){
@@ -184,6 +185,8 @@
             [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
             [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self onCompleted:^(NSString * message) {
                 [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
+                self.lblPlayedTrack.text = [self.viewModel.selectedMusic.artistName stringByAppendingString:[@" - " stringByAppendingString:self.viewModel.selectedMusic.trackName == nil ? @"" : self.viewModel.selectedMusic.trackName]];
+
                 self.slMusicTimeLine.value = 0;
                 self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
                 [self.timer invalidate];
@@ -203,12 +206,14 @@
         //Click by table row
         [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:YES];
         [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self onCompleted:^(NSString * message) {
+            [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
+            self.lblPlayedTrack.text = [self.viewModel.selectedMusic.artistName stringByAppendingString:[@" - " stringByAppendingString:self.viewModel.selectedMusic.trackName == nil ? @"" : self.viewModel.selectedMusic.trackName]];
             self.slMusicTimeLine.value = 0;
             self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
             [self.timer invalidate];
             self.timer = nil;
             self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-            [UIApplication.sharedApplication setNetworkActivityIndicatorVisible:NO];
+            
         }];
         returnValue = YES;
     }
@@ -221,6 +226,8 @@
     self.slMusicTimeLine.value = self.slMusicTimeLine.value + 0.1;
     if (self.slMusicTimeLine.value == self.slMusicTimeLine.maximumValue){
         //Stop the track when it reach maximum
+        [self.timer invalidate];
+        self.timer = nil;
         if ([self.viewModel stopTrack] == YES){
             [self btnFF:nil];
         }

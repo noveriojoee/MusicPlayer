@@ -34,12 +34,13 @@
 }
 
 -(void)playNewTrackWithIndex: (long) index delegate : (id<AVAudioPlayerDelegate>) delegate onCompleted : (void (^)(NSString*))onDownloadTrackFinish{
-    [self setSelectedMusicWithIndex:index];
+    MusicModel* selectedTrack = [self.models objectAtIndex:index];
     self.songPlayer.delegate = delegate;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
-        NSURL *url = [NSURL URLWithString:self.selectedMusic.previewUrl];
+        NSURL *url = [NSURL URLWithString:selectedTrack.previewUrl];
         NSData *soundData = [NSData dataWithContentsOfURL:url];
            dispatch_async(dispatch_get_main_queue(), ^{
+               [self setSelectedMusicWithIndex:index];
                self.songPlayer = [[AVAudioPlayer alloc] initWithData:soundData  error:NULL];
                [self playTrack];
                onDownloadTrackFinish(@"finish");

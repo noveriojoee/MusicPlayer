@@ -96,15 +96,24 @@
                                             <action selector="btnPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9OK-bO-fTO"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Select Track" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDA-lx-s15">
+                                        <rect key="frame" x="5" y="51" width="404" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstItem="hKf-Ia-6x4" firstAttribute="centerX" secondItem="8vG-t2-A9B" secondAttribute="centerX" id="2yQ-FB-DhP"/>
                                     <constraint firstItem="8vG-t2-A9B" firstAttribute="top" secondItem="Qi3-lG-vP0" secondAttribute="top" constant="16" id="3iZ-da-rjt"/>
+                                    <constraint firstItem="jmE-Gz-7Ii" firstAttribute="top" secondItem="wDA-lx-s15" secondAttribute="bottom" id="4R5-Jb-hBd"/>
                                     <constraint firstItem="hKf-Ia-6x4" firstAttribute="top" secondItem="Qi3-lG-vP0" secondAttribute="top" constant="16" id="4am-za-MmW"/>
                                     <constraint firstItem="hKf-Ia-6x4" firstAttribute="width" secondItem="8vG-t2-A9B" secondAttribute="width" multiplier="1.53333" id="4iD-rX-IrM"/>
                                     <constraint firstItem="Eue-LY-Nyi" firstAttribute="top" secondItem="Qi3-lG-vP0" secondAttribute="top" constant="16" id="5d2-rX-PRh"/>
+                                    <constraint firstItem="wDA-lx-s15" firstAttribute="leading" secondItem="Qi3-lG-vP0" secondAttribute="leading" constant="5" id="8Eq-0I-UH5"/>
                                     <constraint firstItem="hKf-Ia-6x4" firstAttribute="height" secondItem="8vG-t2-A9B" secondAttribute="height" id="9F4-ID-xCt"/>
+                                    <constraint firstItem="wDA-lx-s15" firstAttribute="top" secondItem="8vG-t2-A9B" secondAttribute="bottom" constant="5" id="Dvi-Tu-7dM"/>
                                     <constraint firstAttribute="bottom" secondItem="jmE-Gz-7Ii" secondAttribute="bottom" constant="10" id="Gw3-Ll-HQ4"/>
                                     <constraint firstItem="E4N-t9-q4M" firstAttribute="top" secondItem="Qi3-lG-vP0" secondAttribute="top" constant="16" id="IFO-kQ-XiD"/>
                                     <constraint firstItem="8vG-t2-A9B" firstAttribute="centerX" secondItem="Qi3-lG-vP0" secondAttribute="centerX" id="Ne2-K8-m4m"/>
@@ -112,6 +121,7 @@
                                     <constraint firstItem="Eue-LY-Nyi" firstAttribute="leading" secondItem="8vG-t2-A9B" secondAttribute="trailing" constant="75" id="TCL-Cn-N6w"/>
                                     <constraint firstAttribute="trailing" secondItem="jmE-Gz-7Ii" secondAttribute="trailing" constant="5" id="YY6-ur-kLO"/>
                                     <constraint firstItem="jmE-Gz-7Ii" firstAttribute="leading" secondItem="Qi3-lG-vP0" secondAttribute="leading" constant="5" id="c0v-GF-JTm"/>
+                                    <constraint firstAttribute="trailing" secondItem="wDA-lx-s15" secondAttribute="trailing" constant="5" id="pjN-eT-1ps"/>
                                     <constraint firstAttribute="height" constant="130" id="zEp-x3-8m5"/>
                                 </constraints>
                             </view>
@@ -135,6 +145,7 @@
                     <connections>
                         <outlet property="btnPause" destination="hKf-Ia-6x4" id="ISz-Ss-lBm"/>
                         <outlet property="btnPlay" destination="8vG-t2-A9B" id="0dz-vR-GtK"/>
+                        <outlet property="lblPlayedTrack" destination="wDA-lx-s15" id="bOJ-B3-Fab"/>
                         <outlet property="playingView" destination="Qi3-lG-vP0" id="gsO-uL-AaB"/>
                         <outlet property="slMusicTimeLine" destination="jmE-Gz-7Ii" id="oCk-zB-3Cd"/>
                         <outlet property="sliders" destination="jmE-Gz-7Ii" id="cQe-os-D81"/>

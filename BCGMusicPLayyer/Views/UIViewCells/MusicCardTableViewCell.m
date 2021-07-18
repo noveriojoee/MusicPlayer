@@ -62,7 +62,7 @@
         
         
         self.lblSongName.text = model.trackName;
-        self.lblArtist.text = model.collectionArtistName;
+        self.lblArtist.text = model.artistName;
         self.lblAlbums.text = model.collectionName;
         [self.playingIndicator setHidden:YES];
     }
