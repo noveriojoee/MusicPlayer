@@ -16,8 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UISlider *sliders;
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
+@property (weak, nonatomic) IBOutlet UISlider *slMusicTimeLine;
 
 @property MusicCardTableViewCell* selectedCell;
+@property NSTimer *timer;
 @property CGRect hiddenPlayingFrame;
 @property CGRect showPlayingFrame;
 @property CGFloat lastContentOffset;
@@ -46,9 +48,13 @@
     [super viewDidLoad];
     self.viewModel = [MainViewModel new];
     
+    
+    self.slMusicTimeLine.maximumValue = 0;
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
     [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -102,8 +108,6 @@
     };
 }
 
-
-
 #pragma tableview delegates
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MusicCardTableViewCell *cell = [self.tblView dequeueReusableCellWithIdentifier:@"song_item_template" forIndexPath:indexPath];
@@ -126,7 +130,6 @@
         [self hideMusicView:scrollView];
     }else if (self.lastContentOffset > scrollView.contentOffset.y){
         [self showMusicView:scrollView];
-        
     }
 }
 
@@ -181,10 +184,24 @@
             returnValue = YES;
     }
     
+    if (returnValue == YES){
+        self.slMusicTimeLine.value = 0;
+        self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
+        
+    }
+    
     return returnValue;
 }
+
 -(void)updateProgress:(NSString*)temp{
     NSLog(@"%f",self.viewModel.songPlayer.duration);
+    self.slMusicTimeLine.value = self.slMusicTimeLine.value + 0.1;
+    if (self.slMusicTimeLine.maximumValue == self.viewModel.songPlayer.duration){
+        //Stop the track when it reach maximum
+        if ([self.viewModel stopTrack] == YES){
+            [self playSongWithIndex:self.viewModel.selectedIndexSong+1 clickWithButtonPlay:NO];
+        }
+    }
 }
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     [self.viewModel.songPlayer stop];

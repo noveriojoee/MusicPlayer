@@ -131,6 +131,7 @@
                         <outlet property="btnPause" destination="hKf-Ia-6x4" id="ISz-Ss-lBm"/>
                         <outlet property="btnPlay" destination="8vG-t2-A9B" id="0dz-vR-GtK"/>
                         <outlet property="playingView" destination="Qi3-lG-vP0" id="gsO-uL-AaB"/>
+                        <outlet property="slMusicTimeLine" destination="jmE-Gz-7Ii" id="oCk-zB-3Cd"/>
                         <outlet property="sliders" destination="jmE-Gz-7Ii" id="cQe-os-D81"/>
                         <outlet property="tblView" destination="5RK-LO-I3o" id="fvh-uy-cI6"/>
                         <outlet property="tfSearchField" destination="gvF-9X-B9L" id="cKx-WL-vjf"/>

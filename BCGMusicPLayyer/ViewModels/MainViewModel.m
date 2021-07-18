@@ -44,6 +44,7 @@
     [self playTrack];
 
 }
+
 -(void)pauseTrack{
     if (self.songPlayer != nil){
         [self.songPlayer pause];
@@ -52,6 +53,21 @@
         self.isPlaying = NO;
     }
 }
+
+-(BOOL)stopTrack{
+    BOOL returnValue = NO;
+    if (self.songPlayer != nil){
+        [self.songPlayer stop];
+        self.isPlaying = NO;
+        returnValue = YES;
+    }else{
+        self.isPlaying = NO;
+        returnValue = NO;
+    }
+    
+    return returnValue;
+}
+
 
 
 -(void)searchMusicWithCompletion : (void (^)(NSString*))onComplete{

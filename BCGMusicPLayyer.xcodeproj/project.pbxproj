@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE98173826A1E6C0000ACE0A /* uicomponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE98173726A1E6C0000ACE0A /* uicomponents.framework */; };
 		DE98173926A1E6C0000ACE0A /* uicomponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE98173726A1E6C0000ACE0A /* uicomponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEA8269326A20CE9007DF1F1 /* BCGMusicPlayerUITest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA8269226A20CE9007DF1F1 /* BCGMusicPlayerUITest.m */; };
 		DEDC528E269AFDB3006BF1CA /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC528D269AFDB3006BF1CA /* MainViewModel.m */; };
 		DEDC5292269AFDDD006BF1CA /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDC5291269AFDDD006BF1CA /* MusicModel.m */; };
 		DEE8BD3F269C38C2008073E7 /* MusicCardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE8BD25269C37D2008073E7 /* MusicCardTableViewCell.m */; };
@@ -49,6 +50,9 @@
 		6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCGMusicPLayyer.release.xcconfig"; path = "Target Support Files/Pods-BCGMusicPLayyer/Pods-BCGMusicPLayyer.release.xcconfig"; sourceTree = "<group>"; };
 		B1BFB31CDF49FA5FCB84D9FA /* libPods-BCGMusicPLayyer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BCGMusicPLayyer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE98173726A1E6C0000ACE0A /* uicomponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uicomponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA8269026A20CE9007DF1F1 /* BCGMusicPlayerUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCGMusicPlayerUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA8269226A20CE9007DF1F1 /* BCGMusicPlayerUITest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCGMusicPlayerUITest.m; sourceTree = "<group>"; };
+		DEA8269426A20CE9007DF1F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB40253269A3AF30018138B /* uicomponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = uicomponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEDC528C269AFDB3006BF1CA /* MainViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
 		DEDC528D269AFDB3006BF1CA /* MainViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
@@ -90,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DEA8268D26A20CE9007DF1F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEFF01D3269A185F00A21F86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +135,15 @@
 				6F23884E54CD7D1A979B755A /* Pods-BCGMusicPLayyer.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DEA8269126A20CE9007DF1F1 /* BCGMusicPlayerUITest */ = {
+			isa = PBXGroup;
+			children = (
+				DEA8269226A20CE9007DF1F1 /* BCGMusicPlayerUITest.m */,
+				DEA8269426A20CE9007DF1F1 /* Info.plist */,
+			);
+			path = BCGMusicPlayerUITest;
 			sourceTree = "<group>";
 		};
 		DED3FFB6269A18F3009DA4D0 /* ViewModels */ = {
@@ -228,6 +248,7 @@
 				DEFF01D8269A185F00A21F86 /* BCGMusicPLayyer */,
 				DEFF01F4269A186000A21F86 /* BCGMusicPLayyerTests */,
 				DEFF01FF269A186000A21F86 /* BCGMusicPLayyerUITests */,
+				DEA8269126A20CE9007DF1F1 /* BCGMusicPlayerUITest */,
 				DEFF01D7269A185F00A21F86 /* Products */,
 				AC8AA3D398ABB56565301817 /* Pods */,
 				6E7D947C3CD6D24BE3B885BD /* Frameworks */,
@@ -238,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				DEFF01D6269A185F00A21F86 /* BCGMusicPLayyer.app */,
+				DEA8269026A20CE9007DF1F1 /* BCGMusicPlayerUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +305,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DEA8268F26A20CE9007DF1F1 /* BCGMusicPlayerUITest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA8269726A20CE9007DF1F1 /* Build configuration list for PBXNativeTarget "BCGMusicPlayerUITest" */;
+			buildPhases = (
+				DEA8268C26A20CE9007DF1F1 /* Sources */,
+				DEA8268D26A20CE9007DF1F1 /* Frameworks */,
+				DEA8268E26A20CE9007DF1F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BCGMusicPlayerUITest;
+			productName = BCGMusicPlayerUITest;
+			productReference = DEA8269026A20CE9007DF1F1 /* BCGMusicPlayerUITest.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DEFF0205269A186000A21F86 /* Build configuration list for PBXNativeTarget "BCGMusicPLayyer" */;
@@ -310,6 +349,9 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					DEA8268F26A20CE9007DF1F1 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					DEFF01D5269A185F00A21F86 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -329,11 +371,19 @@
 			projectRoot = "";
 			targets = (
 				DEFF01D5269A185F00A21F86 /* BCGMusicPLayyer */,
+				DEA8268F26A20CE9007DF1F1 /* BCGMusicPlayerUITest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DEA8268E26A20CE9007DF1F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEFF01D4269A185F00A21F86 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +422,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DEA8268C26A20CE9007DF1F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA8269326A20CE9007DF1F1 /* BCGMusicPlayerUITest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DEFF01D2269A185F00A21F86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +472,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DEA8269526A20CE9007DF1F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPlayerUITest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPlayerUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DEA8269626A20CE9007DF1F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P9E3SV7XKM;
+				INFOPLIST_FILE = BCGMusicPlayerUITest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gid.BCGMusicPlayerUITest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		DEFF0203269A186000A21F86 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -567,6 +663,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DEA8269726A20CE9007DF1F1 /* Build configuration list for PBXNativeTarget "BCGMusicPlayerUITest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA8269526A20CE9007DF1F1 /* Debug */,
+				DEA8269626A20CE9007DF1F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DEFF01D1269A185F00A21F86 /* Build configuration list for PBXProject "BCGMusicPLayyer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
