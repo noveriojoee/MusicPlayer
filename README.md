@@ -24,6 +24,8 @@ i'm writing the code using MVVM pattern here..
 
 ###Please see this as the demonstration video of the apps:
 https://drive.google.com/file/d/1R5PTlBDar5K1zEk3yAyYts5c7mCJd9jh/view?usp=sharing
+latest video + unit Test
+https://drive.google.com/file/d/1aGM48aLeksvp-y0YE1JO0dARTbWH05YU/view?usp=sharing
 
 ###to start compile and running this project
 please just clone this repostitory with this link : 
