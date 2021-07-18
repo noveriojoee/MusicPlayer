@@ -53,8 +53,6 @@
     [self.tblView setDelegate:self];
     [self.tblView setDataSource:self];
     [self.tblView registerNib:[UINib nibWithNibName:@"MusicCardTableViewCell" bundle:[NSBundle bundleWithIdentifier:@"com.gid.BCGMusicPLayyer"]] forCellReuseIdentifier:@"song_item_template"];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -173,21 +171,27 @@
             //pressing button bf and ff
             self.viewModel.selectedIndexSong = index;
             [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
+            self.slMusicTimeLine.value = 0;
             returnValue = YES;
         }else{
+            //button pause clicked
             [self.viewModel pauseTrack];
+            [self.timer invalidate];
+            self.timer = nil;
             returnValue = NO;
         }
     }else{
         //Click by table row
-            [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
-            returnValue = YES;
+        [self.viewModel playNewTrackWithIndex:self.viewModel.selectedIndexSong delegate:self];
+        self.slMusicTimeLine.value = 0;
+        returnValue = YES;
     }
     
     if (returnValue == YES){
-        self.slMusicTimeLine.value = 0;
         self.slMusicTimeLine.maximumValue = self.viewModel.songPlayer.duration;
-        
+        [self.timer invalidate];
+        self.timer = nil;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
     }
     
     return returnValue;
