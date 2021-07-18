@@ -196,10 +196,10 @@
 -(void)updateProgress:(NSString*)temp{
     NSLog(@"%f",self.viewModel.songPlayer.duration);
     self.slMusicTimeLine.value = self.slMusicTimeLine.value + 0.1;
-    if (self.slMusicTimeLine.maximumValue == self.viewModel.songPlayer.duration){
+    if (self.slMusicTimeLine.value == self.slMusicTimeLine.maximumValue){
         //Stop the track when it reach maximum
         if ([self.viewModel stopTrack] == YES){
-            [self playSongWithIndex:self.viewModel.selectedIndexSong+1 clickWithButtonPlay:NO];
+            [self btnFF:nil];
         }
     }
 }
